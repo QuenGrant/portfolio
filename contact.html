@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body data-theme="aurora" data-mode="dark" data-page="contact">
+<body data-theme="aurora" data-page="contact">
 
   <a class="skip" href="#content">Skip to content</a>
 
@@ -18,7 +18,7 @@
         <div class="logo" aria-hidden="true">QG</div>
         <div>
           <h1>Quentin Grant</h1>
-          <p>AWS • IT Operations • Security</p>
+          <p>AWS Cloud Infrastructure • IT Operations • Cloud Security</p>
         </div>
       </div>
 
@@ -40,31 +40,29 @@
 
   <main id="content">
 
-    <!-- HERO -->
     <section class="card pageHero">
       <p class="kicker"><span class="dot"></span>Contact</p>
-      <h2 class="pageTitle">Let’s connect</h2>
+      <h2 class="pageTitle">Let's connect</h2>
       <p class="sub">
-        Reach out by email or LinkedIn for cloud support, junior cloud engineering, or IT operations opportunities.
+        I'm open to connecting with professionals and teams seeking cloud support, junior cloud engineering, and IT operations talent. Reach out through email or LinkedIn to discuss opportunities and collaboration.
       </p>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="card section">
       <h2>Get In Touch</h2>
 
       <div class="twoCol">
 
-        <!-- LEFT SIDE -->
         <div class="item">
           <h3>Contact Details</h3>
           <p class="smallText">
-            Best way to reach me is by email. I’m also active on LinkedIn.
+           I welcome opportunities to connect with professionals, hiring teams, and organizations focused on cloud support, infrastructure operations, and technology solutions. 
+           Email is the best way to reach me, and I am also active on LinkedIn.
           </p>
 
           <div class="heroActions">
-            <a class="btn primary" href="mailto:Grant.quent@gmail.com">
-              Grant.quent@gmail.com
+            <a class="btn primary" href="mailto:Quentingrant82.com">
+              Quentingrant82@gmail.com
             </a>
 
             <a class="btn"
@@ -83,17 +81,15 @@
             Location: Blythewood, South Carolina
           </p>
 
-          <!-- ✅ TRUST LINE -->
           <p class="smallText">
-            I typically respond within 24 hours.
+            Availability: Open to remote and hybrid opportunities in cloud support, cloud operations, and infrastructure engineering.
           </p>
         </div>
 
-        <!-- RIGHT SIDE (WORKING FORM) -->
         <form
           class="item"
           id="contactForm"
-          action="https://formsubmit.co/Grant.quent@gmail.com"
+          action="https://formsubmit.co/ajax/Quentingrant82@gmail.com"
           method="POST"
         >
           <h3>Quick Message</h3>
@@ -107,17 +103,13 @@
           <label class="small" for="msg">Message</label><br />
           <textarea id="msg" name="message" rows="5" required></textarea>
 
-          <!-- Hidden settings -->
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="New Portfolio Message">
-          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="New Portfolio Message" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_replyto" value="" />
 
-          <!-- ✅ SUCCESS REDIRECT -->
-          <input type="hidden" name="_next" value="contact.html?success=true">
+          <button class="btn primary" id="submitBtn" type="submit">Send</button>
 
-          <button class="btn primary" type="submit">Send</button>
-
-          <!-- ✅ SUCCESS MESSAGE -->
           <p id="formSuccess" class="small topGap" style="display:none;"></p>
         </form>
 
@@ -132,15 +124,53 @@
 
   <script src="script.js"></script>
 
-  <!-- ✅ SUCCESS MESSAGE SCRIPT -->
   <script>
-    const params = new URLSearchParams(window.location.search);
+    const contactForm = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("submitBtn");
     const successMsg = document.getElementById("formSuccess");
+    const emailInput = document.getElementById("email");
 
-    if (params.get("success") === "true" && successMsg) {
-      successMsg.style.display = "block";
-      successMsg.textContent = "✅ Thanks! Your message has been sent. I’ll be in touch soon.";
-    }
+    contactForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      successMsg.style.display = "none";
+      successMsg.textContent = "";
+
+      const formData = new FormData(contactForm);
+      formData.set("_replyto", emailInput.value);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success === "true") {
+          successMsg.style.display = "block";
+          successMsg.style.color = "";
+          successMsg.textContent = "✅ Thanks! Your message has been sent. I’ll be in touch soon.";
+          contactForm.reset();
+        } else {
+          successMsg.style.display = "block";
+          successMsg.style.color = "#ff8a8a";
+          successMsg.textContent = "Something went wrong. Please try again.";
+        }
+      } catch (error) {
+        successMsg.style.display = "block";
+        successMsg.style.color = "#ff8a8a";
+        successMsg.textContent = "Unable to send right now. Please try again.";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send";
+      }
+    });
   </script>
 
 </body>

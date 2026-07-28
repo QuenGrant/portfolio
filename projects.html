@@ -133,7 +133,6 @@
       border-color:rgba(255,255,255,.2);
     }
 
-
     .project-top{
       display:grid;
       grid-template-columns: 1.05fr .95fr;
@@ -271,7 +270,7 @@
   </style>
 </head>
 
-<body data-theme="aurora" data-mode="dark" data-page="projects">
+<body data-theme="aurora" data-page="projects">
   <a class="skip" href="#content">Skip to content</a>
 
   <header>
@@ -280,7 +279,7 @@
         <div class="logo" aria-hidden="true">QG</div>
         <div>
           <h1>Quentin Grant</h1>
-          <p>AWS • IT Operations • Security</p>
+          <p>AWS Cloud Infrastructure • IT Operations • Cloud Security</p>
         </div>
       </div>
 
@@ -296,7 +295,7 @@
       <div class="actions">
         <button class="btn" id="themeBtn" type="button">Theme: Aurora</button>
         <button class="btn" id="modeBtn" type="button">Mode: Dark</button>
-        <a class="btn" href="mailto:Grant.quent@gmail.com">Email</a>
+        <a class="btn" href="mailto:Quentingrant82@gmail.com">Email</a>
         <a class="btn primary" href="https://www.linkedin.com/in/quentingrant/" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>
@@ -306,245 +305,226 @@
 
     <section class="card projects-hero">
       <div class="projects-hero-inner">
-        <div class="projects-kicker">Projects</div>
+        <div class="projects-kicker">Cloud Engineering Projects</div>
         <p class="projects-lead">
-          These projects highlight hands-on work across AWS hosting, network design, fleet operations,
-          and security documentation. Each project reflects foundational cloud engineering, cloud support,
-          and operational discipline.
+          These projects demonstrate hands-on experience designing, deploying, and troubleshooting cloud environments using AWS, Infrastructure as Code, networking, automation, and security best practices. 
+          Each project reflects a focus on reliability, operational excellence, and building scalable infrastructure solutions.
         </p>
 
         <div class="projects-mini-row">
-          <span class="projects-mini-chip">AWS</span>
-          <span class="projects-mini-chip">Infrastructure</span>
-          <span class="projects-mini-chip">Operations</span>
-          <span class="projects-mini-chip">Security</span>
+          <span class="projects-mini-chip">AWS Cloud Infrastructure</span>
+          <span class="projects-mini-chip">Infrastructure as Code(IAC)</span>
+          <span class="projects-mini-chip">Cloud Operations</span>
+          <span class="projects-mini-chip">Security & Reliability</span>
         </div>
       </div>
     </section>
 
-
-
-
     <section class="card project-group">
-      <h2 class="project-group-title">Cloud Hosting & Delivery</h2>
+      <h2 class="project-group-title">Cloud Infrastructure & Delivery</h2>
 
       <div class="project-stack">
         <article class="project-card">
-  <div class="project-top">
-    <div class="project-copy">
-      <h3>AWS S3 Static Website</h3>
-      <div class="project-subtitle">
-        Deployed a secure, scalable static website using AWS S3 with CDN-ready architecture.
-      </div>
+          <div class="project-top">
+            <div class="project-copy">
+              <h3>AWS Static Website Deployment & CDN Architecture</h3>
+              <div class="project-subtitle">
+                Designed and deployed a secure, scalable static website architecture using Amazon S3 and CloudFront with IAM-based access controls and optimized content delivery.
+              </div>
 
-      <div class="project-meta">
-        S3 • CloudFront • IAM • Route 53
-      </div>
+              <div class="project-meta">
+                Amazon S3 • CloudFront • IAM • Route 53
+              </div>
 
-      <div class="project-pills">
-        <span>AWS</span>
-        <span>CloudFront</span>
-        <span>IAM</span>
-        <span>Web Hosting</span>
-      </div>
+              <div class="project-pills">
+                <span>Amazon S3</span>
+                <span>CloudFront CDN</span>
+                <span>IAM Security</span>
+                <span>Static Website Architecture</span>
+              </div>
 
-      <p class="project-desc">
-        Built an S3-hosted website to simulate real-world cloud hosting, 
-        implementing IAM policies and versioning to improve security and reliability.
-      </p>
+              <p class="project-desc">
+                Designed and deployed a secure AWS static website architecture using S3, IAM, and CloudFront to enable scalable content delivery with controlled access and improved performance.
+              </p>
 
-      <ul class="project-list">
-        <li>Configured S3 bucket for static hosting with secure public access settings</li>
-        <li>Implemented IAM-based permissions aligned with least-privilege principles</li>
-        <li>Prepared CDN integration using CloudFront concepts for performance and scalability</li>
-        <li>Applied versioning and access policies to improve reliability and data protection</li>
-      </ul>
+              <ul class="project-list">
+                <li>Configured secure Amazon S3 static website hosting with controlled access permissions.</li>
+                <li>Applied IAM least-privilege policies to strengthen cloud security.</li>
+                <li>Enabled S3 versioning for improved durability and recovery.</li>
+                <li>Integrated CloudFront CDN for optimized content delivery and scalability.</li>
+              </ul>
 
-      <div class="project-footer-row">
-        <a class="btn primary" href="#">View Live</a>
-        <a class="btn" href="#">GitHub</a>
-      </div>
+              <div class="project-footer-row">
+                <a class="btn primary" href="https://quentingrant.github.io/Updated-Technical-Portfolio/" target="_blank" rel="noreferrer">View Live</a>
+                <a class="btn" href="https://github.com/QuentinGrant/Updated-Technical-Portfolio" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
 
-      <div class="project-note">
-        Built to demonstrate secure cloud hosting and scalable content delivery practices.
-      </div>
-    </div>
+              <div class="project-note">
+                Designed and deployed to demonstrate secure AWS infrastructure practices, scalable content delivery, and cloud architecture principles.
+              </div>
+            </div>
 
-    <div class="project-visual">
-      <img src="images/s3.png" alt="AWS S3 static website architecture diagram" class="project-img">
-    </div>
-  </div>
-</article>
+            <div class="project-visual">
+              <img src="images/s3.png" alt="AWS S3 static website architecture diagram" class="project-img">
+            </div>
+          </div>
+        </article>
       </div>
     </section>
-
-
-
 
     <section class="card project-group">
       <h2 class="project-group-title">Networking & Infrastructure</h2>
 
       <div class="project-stack">
         <article class="project-card">
-  <div class="project-top">
-    <div class="project-copy">
-      <h3>VPC + EC2 Network Architecture</h3>
-      <div class="project-subtitle">
-        Designed a segmented AWS network with secure instance deployment and controlled traffic flow.
-      </div>
+          <div class="project-top">
+            <div class="project-copy">
+              <h3>AWS VPC & EC2 Network Architecture</h3>
+              <div class="project-subtitle">
+                Designed and deployed a secure AWS network architecture using VPC, subnets, security groups, and network ACLs to control traffic flow, isolate resources, and support reliable EC2 workload deployment.
+              </div>
 
-      <div class="project-meta">
-        VPC • Subnets • Security Groups • NACLs • EC2
-      </div>
+              <div class="project-meta">
+                VPC • Subnets • EC2 • Security Groups • Network ACLs
+              </div>
 
-      <div class="project-pills">
-        <span>VPC</span>
-        <span>EC2</span>
-        <span>Security Groups</span>
-        <span>NACLs</span>
-      </div>
+              <div class="project-pills">
+                <span>VPC</span>
+                <span>Subnets</span>
+                <span>EC2</span>
+                <span>Security Groups</span>
+                <span>NACLs</span>
+              </div>
 
-      <p class="project-desc">
-        Architected a multi-tier AWS VPC environment with public and private subnets, 
-        enabling secure and controlled access to EC2 instances while maintaining network isolation.
-      </p>
+              <p class="project-desc">
+                Designed and implemented a segmented AWS VPC architecture using public and private subnets to support secure EC2 deployments, controlled traffic flow, and scalable cloud networking practices.
 
-      <ul class="project-list">
-        <li>Designed VPC with segmented public and private subnets for workload separation</li>
-        <li>Configured routing tables and Internet Gateway for controlled external access</li>
-        <li>Applied least-privilege security group rules for inbound and outbound traffic</li>
-        <li>Implemented network ACLs to enforce additional traffic filtering at the subnet level</li>
-      </ul>
+              <ul class="project-list">
+                <li>Designed VPC networking architecture with public and private subnets to isolate workloads and improve security boundaries.</li>
+                <li>Configured route tables and Internet Gateway components to manage controlled external connectivity.</li>
+                <li>Implemented security group rules following least-privilege principles to restrict inbound and outbound access.</li>
+                <li>Applied network ACL configurations to provide additional subnet-level traffic filtering and defense-in-depth security.</li>
+              </ul>
 
-      <div class="project-footer-row">
-        <a class="btn primary" href="#">View Project</a>
-        <a class="btn" href="#">GitHub</a>
-      </div>
+              <div class="project-footer-row">
+                <a class="btn primary" href="https://quentingrant.github.io/Updated-Technical-Portfolio/" target="_blank" rel="noreferrer">View Project</a>
+                <a class="btn" href="https://github.com/QuentinGrant/Updated-Technical-Portfolio" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
 
-      <div class="project-note">
-        Demonstrates foundational cloud networking, segmentation, and security design.
-      </div>
-    </div>
+              <div class="project-note">
+                Demonstrates secure AWS networking, workload segmentation, and cloud infrastructure design practices.
+              </div>
+            </div>
 
-    <div class="project-visual">
-      <img src="images/vpc.png" alt="AWS VPC and EC2 network lab diagram" class="project-img">
-    </div>
-  </div>
-</article>
-      </div>
-    </section>
-
-
-
-
-
-    <section class="card project-group">
-      <h2 class="project-group-title">Operations & Automation</h2>
-
-      <div class="project-stack">
-        <article class="project-card">
-  <div class="project-top">
-    <div class="project-copy">
-      <h3>AWS Systems Manager</h3>
-      <div class="project-subtitle">
-        Improved visibility, patching, and operational control across EC2 instances.
-      </div>
-
-      <div class="project-meta">
-        SSM • Patch Manager • Run Command • Inventory
-      </div>
-
-      <div class="project-pills">
-        <span>SSM</span>
-        <span>Automation</span>
-        <span>Patching</span>
-        <span>Operations</span>
-      </div>
-
-      <p class="project-desc">
-        Implemented AWS Systems Manager to centralize instance management, automate patching workflows, 
-        and improve operational visibility across cloud resources.
-      </p>
-
-      <ul class="project-list">
-        <li>Configured SSM Agent and IAM roles for secure instance management</li>
-        <li>Used Run Command to execute remote administrative actions across instances</li>
-        <li>Implemented patch baselines and maintenance windows for automated updates</li>
-        <li>Leveraged inventory tracking to improve system visibility and compliance awareness</li>
-      </ul>
-
-      <div class="project-footer-row">
-        <a class="btn primary" href="#">View Project</a>
-        <a class="btn" href="#">GitHub</a>
-      </div>
-
-      <div class="project-note">
-        Focused on operational efficiency, automation, and cloud systems management.
-      </div>
-    </div>
-
-    <div class="project-visual">
-      <img src="images/ssm.png" alt="AWS Systems Manager architecture diagram" class="project-img">
-    </div>
-  </div>
-</article>
+            <div class="project-visual">
+              <img src="images/vpc.png" alt="AWS VPC and EC2 network lab diagram" class="project-img">
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-
-
-
     <section class="card project-group">
-      <h2 class="project-group-title">Security & Incident Response</h2>
+      <h2 class="project-group-title">Cloud Operations & Automation</h2>
 
       <div class="project-stack">
         <article class="project-card">
-  <div class="project-top">
-    <div class="project-copy">
-      <h3>SIEM Monitoring & Incident Analysis Lab</h3>
-      <div class="project-subtitle">
-        Built a foundational SIEM workflow to collect logs, investigate events, and improve security visibility.
+          <div class="project-top">
+            <div class="project-copy">
+              <h3>AWS Systems Manager Operations & Automation</h3>
+              <div class="project-subtitle">
+                Implemented AWS Systems Manager to centralize EC2 instance management, automate maintenance workflows, and improve operational visibility across cloud environments.
+              </div>
+
+              <div class="project-meta">
+               AWS Systems Manager • EC2 Management • Patch Automation • Operational Visibility
+              </div>
+
+              <div class="project-pills">
+                <span>AWS Systems Manager</span>
+                <span>EC2 Management</span>
+                <span>Patch Automation</span>
+                <span>Operational Visibility</span>
+              </div>
+
+              <p class="project-desc">
+                Implemented AWS Systems Manager to centralize EC2 management, automate maintenance workflows, and improve operational visibility through secure instance administration and monitoring.
+              </p>
+
+              <ul class="project-list">
+                <li>Configured AWS Systems Manager Agent and IAM roles to enable secure, controlled remote administration of EC2 instances.</li>
+                <li>Utilized Run Command to execute administrative tasks and streamline management across multiple EC2 environments.</li>
+                <li>Implemented automated patching workflows using Patch Manager and maintenance windows to improve system reliability.</li>
+                <li>Enhanced operational visibility through inventory collection, instance monitoring, and centralized management capabilities.</li>
+              </ul>
+
+              <div class="project-footer-row">
+                <a class="btn primary" href="https://quentingrant.github.io/Updated-Technical-Portfolio/" target="_blank" rel="noreferrer">View Project</a>
+                <a class="btn" href="https://github.com/QuentinGrant/Updated-Technical-Portfolio" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+
+              <div class="project-note">
+                Demonstrates cloud operations expertise through automation, efficient infrastructure management, and improved system reliability.
+              </div>
+            </div>
+
+            <div class="project-visual">
+              <img src="images/ssm.png" alt="AWS Systems Manager architecture diagram" class="project-img">
+            </div>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <div class="project-meta">
-        SIEM • Log Analysis • Security Monitoring • Incident Investigation
-      </div>
+    <section class="card project-group">
+      <h2 class="project-group-title">Cloud Security & Incident Response</h2>
 
-      <div class="project-pills">
-        <span>SIEM</span>
-        <span>Security Monitoring</span>
-        <span>Log Analysis</span>
-        <span>Incident Response</span>
-      </div>
+      <div class="project-stack">
+        <article class="project-card">
+          <div class="project-top">
+            <div class="project-copy">
+              <h3>SIEM Monitoring & Incident Response Analysis</h3>
+              <div class="project-subtitle">
+                Designed and implemented a SIEM monitoring workflow to collect security logs, analyze events, and improve threat visibility across monitored environments.
+              </div>
 
-      <p class="project-desc">
-        Built a hands-on SIEM lab to practice centralized log collection, event analysis, and security investigation workflows.
-        The project focused on improving visibility into system activity and identifying suspicious behavior through log review
-        and alert-driven analysis.
-      </p>
+              <div class="project-meta">
+                SIEM Monitoring • Log Analysis • Security Operations • Incident Investigation
+              </div>
 
-      <ul class="project-list">
-        <li>Collected and reviewed system and security logs to build familiarity with normal and suspicious activity patterns</li>
-        <li>Investigated alerts and event data to identify potential indicators of unauthorized access or misconfiguration</li>
-        <li>Practiced filtering, searching, and correlating log data to support faster incident review</li>
-        <li>Documented findings, observations, and response steps to strengthen repeatable security operations workflows</li>
-      </ul>
+              <div class="project-pills">
+                <span>SIEM Monitoring</span>
+                <span>Log Analysis</span>
+                <span>Security Operations</span>
+                <span>Incident Investigation</span>
+              </div>
 
-      <div class="project-footer-row">
-        <a class="btn primary" href="#">View Project</a>
-        <a class="btn" href="#">GitHub</a>
-      </div>
+              <p class="project-desc">
+                Developed a SIEM-based monitoring environment to analyze security logs, identify anomalies, and apply incident response workflows for improved threat visibility.
+              </p>
 
-      <div class="project-note">
-        Demonstrates foundational security monitoring, log analysis, and incident investigation skills in a controlled lab environment.
-      </div>
-    </div>
+              <ul class="project-list">
+                <li>Collected and analyzed system and security logs to identify suspicious activity patterns and potential security events.</li>
+                <li>Investigated alerts and event data to improve threat visibility and strengthen incident analysis processes.</li>
+                <li>Correlated log sources to support faster event investigation and more effective security response workflows.</li>
+                <li>Documented findings, analysis steps, and response procedures to establish repeatable security operations practices.</li>
+              </ul>
 
-    <div class="project-visual">
-      <img src="images/siem.png" alt="SIEM monitoring and incident analysis lab diagram" class="project-img">
-    </div>
-  </div>
-</article>
+              <div class="project-footer-row">
+                <a class="btn primary" href="https://quentingrant.github.io/Updated-Technical-Portfolio/" target="_blank" rel="noreferrer">View Project</a>
+                <a class="btn" href="https://github.com/QuentinGrant/Updated-Technical-Portfolio" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+
+              <div class="project-note">
+                Demonstrates security monitoring, log analysis, and incident investigation capabilities through a simulated security operations environment.
+              </div>
+            </div>
+
+            <div class="project-visual">
+              <img src="images/siem.png" alt="SIEM monitoring and incident analysis lab diagram" class="project-img">
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 

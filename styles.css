@@ -987,3 +987,574 @@ body[data-mode="light"]{
 .twoCol .item ul {
   flex-grow: 1;
 }
+
+
+/* Default / Light mode */
+h2.portfolio-headline {
+  color: var(--text); /* uses text color from body variables */
+}
+
+/* Dark mode override */
+@media (prefers-color-scheme: dark) {
+  h2.portfolio-headline {
+    color: #FFFFFF !important; /* force white in dark mode */
+  }
+}
+
+
+.projects-shell{
+      display:grid;
+      gap:18px;
+    }
+
+    .projects-hero{
+      position:relative;
+      overflow:hidden;
+      padding:28px;
+    }
+
+    .projects-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(500px 240px at 10% 10%, rgba(34,197,94,.10), transparent 60%),
+        radial-gradient(520px 260px at 85% 20%, rgba(59,130,246,.12), transparent 60%),
+        radial-gradient(460px 240px at 60% 100%, rgba(167,139,250,.10), transparent 60%);
+      pointer-events:none;
+    }
+
+    .projects-hero-inner{
+      position:relative;
+      z-index:1;
+    }
+
+    .projects-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+
+    .pageHero .kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+
+  padding:3px 8px;          /* slightly smaller bubble */
+  margin-bottom:14px;
+
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+
+  font-family:var(--mono);
+  font-size:10px;           /* slightly smaller text */
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+    .projects-title{
+      margin:0 0 12px;
+      font-size:clamp(30px, 4vw, 44px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      max-width:12ch;
+    }
+
+    .projects-lead{
+      margin:0;
+      max-width:68ch;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.8;
+    }
+
+    .projects-mini-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .projects-mini-chip{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      font-family:var(--mono);
+      font-size:12px;
+      color:var(--text);
+    }
+
+    .project-group{
+      padding:22px;
+    }
+
+    .project-group-title{
+      margin:0 0 14px;
+      font-size:14px;
+      font-family:var(--mono);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .project-group-title::after{
+      content:"";
+      height:2px;
+      width:48px;
+      border-radius:999px;
+      background:linear-gradient(90deg, var(--a2), var(--a3));
+      opacity:.9;
+    }
+
+    .project-stack{
+      display:grid;
+      gap:16px;
+    }
+
+    .project-card{
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .project-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 40px rgba(0,0,0,.22);
+      border-color:rgba(255,255,255,.2);
+    }
+
+    .project-top{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .project-copy{
+      min-width:0;
+    }
+
+    .project-copy h3{
+      margin:0 0 8px;
+      font-size:28px;
+      line-height:1.1;
+      letter-spacing:-.02em;
+    }
+
+    .project-subtitle{
+      margin:0 0 8px;
+      font-size:16px;
+      color:var(--text);
+      opacity:.92;
+    }
+
+    .project-meta{
+      font-family:var(--mono);
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:12px;
+      line-height:1.6;
+    }
+
+    .project-desc{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    .project-pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:0 0 14px;
+    }
+
+    .project-pills span{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-family:var(--mono);
+      font-size:12px;
+      white-space:nowrap;
+      color:var(--text);
+    }
+
+    .project-pills span:nth-child(4n+1){
+      border-color: color-mix(in oklab, var(--a1) 60%, var(--line));
+      background: color-mix(in oklab, var(--a1) 16%, transparent);
+    }
+    .project-pills span:nth-child(4n+2){
+      border-color: color-mix(in oklab, var(--a2) 60%, var(--line));
+      background: color-mix(in oklab, var(--a2) 16%, transparent);
+    }
+    .project-pills span:nth-child(4n+3){
+      border-color: color-mix(in oklab, var(--a3) 60%, var(--line));
+      background: color-mix(in oklab, var(--a3) 16%, transparent);
+    }
+    .project-pills span:nth-child(4n+4){
+      border-color: color-mix(in oklab, var(--a4) 60%, var(--line));
+      background: color-mix(in oklab, var(--a4) 16%, transparent);
+    }
+
+    .project-list{
+      margin:0;
+      padding-left:18px;
+      color:var(--text);
+    }
+
+    .project-list li{
+      margin:8px 0;
+      line-height:1.65;
+    }
+
+    .project-visual{
+      min-width:0;
+    }
+
+    .project-img{
+      width:100%;
+      height:100%;
+      min-height:280px;
+      max-height:360px;
+      object-fit:cover;
+      border-radius:16px;
+      border:1px solid var(--line);
+      display:block;
+      background:rgba(255,255,255,.03);
+    }
+
+    .project-footer-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    .project-note{
+      margin-top:8px;
+      font-family:var(--mono);
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    @media (max-width: 980px){
+      .project-top{
+        grid-template-columns:1fr;
+      }
+
+      .projects-title{
+        max-width:none;
+      }
+
+      .project-copy h3{
+        font-size:24px;
+      }
+
+      .project-img{
+        min-height:220px;
+      }
+    }
+
+
+
+
+
+
+    /* ==========================================================
+   PORTFOLIO SPACING & READABILITY POLISH
+   Keeps existing layout, colors, themes, and structure intact
+   ========================================================== */
+
+
+/* ==========================
+   PAGE HERO SECTIONS
+   Experience / Education / Contact
+   ========================== */
+
+.pageHero {
+  padding: 42px 38px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.pageHero .kicker {
+  margin-bottom: 14px;
+}
+
+
+.pageHero .pageTitle {
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 12px 0 18px;
+}
+
+
+.pageHero .sub{
+  margin:0;
+  max-width:90ch;      /* was 72ch */
+  width:100%;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--muted);
+}
+
+/* ==========================
+   MAIN CONTENT SECTIONS
+   Experience / Education /
+   Contact cards
+   ========================== */
+
+.section {
+  padding: 28px;
+}
+
+
+.section h2 {
+  margin-bottom: 18px;
+}
+
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+
+.item {
+  padding: 28px;
+}
+
+
+.item h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+
+.where {
+  margin-bottom: 14px;
+}
+
+
+.item ul {
+  margin-top: 16px;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+
+.item li {
+  margin: 12px 0;
+}
+
+
+/* ==========================
+   PROJECT PAGE IMPROVEMENTS
+   Keeps image/text layout
+   ========================== */
+
+
+.projects-hero {
+  padding: 38px;
+}
+
+
+.projects-lead {
+  max-width: 85ch;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+
+.project-group {
+  padding: 28px;
+}
+
+
+.project-card {
+  padding: 26px;
+}
+
+
+.project-top {
+  grid-template-columns: 1.25fr .75fr;
+  gap: 34px;
+}
+
+
+.project-copy h3 {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+
+.project-subtitle {
+  line-height: 1.7;
+}
+
+
+.project-desc {
+  line-height: 1.85;
+}
+
+
+.project-list li {
+  margin: 12px 0;
+  line-height: 1.75;
+}
+
+
+/* ==========================
+   CONTACT FORM SPACING
+   ========================== */
+
+#contact .item {
+  padding: 30px;
+}
+
+
+#contact input,
+#contact textarea {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+
+/* ==========================
+   SMALL TEXT IMPROVEMENT
+   ========================== */
+
+.smallText {
+  line-height: 1.8;
+}
+
+
+/* ==========================
+   MOBILE RESPONSIVENESS
+   ========================== */
+
+@media(max-width:900px){
+
+  .pageHero {
+    padding:30px 22px;
+    min-height:auto;
+  }
+
+
+  .pageHero .pageTitle {
+    font-size:30px;
+  }
+
+
+  .section {
+    padding:20px;
+  }
+
+
+  .twoCol {
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+
+  .item {
+    padding:22px;
+  }
+
+
+  .project-top {
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+
+  .project-card {
+    padding:22px;
+  }
+
+}
+
+
+/* ==================================================
+   PAGE HERO (Experience / Education / Contact)
+   ================================================== */
+
+.pageHero{
+  padding:32px 38px;          /* gives the text breathing room */
+  min-height:170px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.pageHero .kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:4px 10px;           /* smaller pill */
+  margin-bottom:14px;
+
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+
+  font-size:11px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+
+.pageHero .pageTitle{
+  margin:0 0 12px;
+  font-size:clamp(26px, 2.8vw, 34px);
+  line-height:1.2;
+  max-width:24ch;             /* allows comfortable wrapping */
+}
+
+.pageHero .sub{
+  margin:0;
+  max-width:72ch;             /* wider paragraph */
+  font-size:16px;
+  line-height:1.75;
+  color:var(--muted);
+}
+
+@media (max-width:900px){
+
+  .pageHero{
+    padding:26px;
+    min-height:auto;
+  }
+
+  .pageHero .pageTitle{
+    max-width:none;
+  }
+
+  .pageHero .sub{
+    max-width:none;
+  }
+}

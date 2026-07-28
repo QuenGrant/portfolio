@@ -1,6 +1,6 @@
 document.getElementById("year")?.append(new Date().getFullYear());
 
-const email = "Grant.quent@gmail.com";
+const email = "Quentingrant82@gmail.com";
 const copyBtn = document.getElementById("copyEmail");
 
 copyBtn?.addEventListener("click", async () => {
