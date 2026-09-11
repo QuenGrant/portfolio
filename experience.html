@@ -1,11 +1,271 @@
-<!doctype html>
+<<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Professional experience of Quentin Grant" />
+
+  <meta
+    name="description"
+    content="Professional experience of Quentin Grant — IT operations, network engineering, infrastructure support, and cloud engineering."
+  />
+
+  <meta property="og:title" content="Quentin Grant | Experience" />
+  <meta
+    property="og:description"
+    content="Cloud Engineering • AWS Infrastructure • Automation & Operations"
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.jpg.jpg" />
+
   <title>Quentin Grant | Experience</title>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .experience-shell{
+      display:grid;
+      gap:18px;
+    }
+
+    .experience-hero{
+      position:relative;
+      overflow:hidden;
+      padding:28px;
+    }
+
+    .experience-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(520px 240px at 8% 10%, rgba(34,197,94,.10), transparent 60%),
+        radial-gradient(540px 260px at 86% 18%, rgba(59,130,246,.12), transparent 62%),
+        radial-gradient(480px 240px at 60% 100%, rgba(167,139,250,.10), transparent 60%);
+      pointer-events:none;
+    }
+
+    .experience-hero-inner{
+      position:relative;
+      z-index:1;
+    }
+
+    .experience-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:12px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .experience-kicker::after{
+      content:"";
+      width:56px;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3));
+    }
+
+    .experience-title{
+      margin:0 0 12px;
+      max-width:16ch;
+      font-size:clamp(30px,4vw,44px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+
+    .experience-lead{
+      max-width:70ch;
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    .experience-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .experience-chip{
+      padding:9px 13px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+      font-family:var(--mono);
+      font-size:12px;
+    }
+
+    .experience-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .experience-stat{
+      position:relative;
+      padding:20px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.035);
+    }
+
+    .experience-stat::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:3px;
+      background:linear-gradient(
+        90deg,
+        var(--a1),
+        var(--a2),
+        var(--a3),
+        var(--a4)
+      );
+    }
+
+    .experience-stat-number{
+      margin-bottom:9px;
+      font-size:32px;
+      font-weight:800;
+      line-height:1;
+    }
+
+    .experience-stat-label{
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      line-height:1.5;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+
+    .experience-section{
+      padding:22px;
+    }
+
+    .experience-section-title{
+      margin:0 0 16px;
+      font-size:14px;
+      font-family:var(--mono);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .experience-section-title::after{
+      content:"";
+      width:48px;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--a2),var(--a3));
+    }
+
+    .experience-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+    }
+
+    .experience-card{
+      padding:20px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.035);
+    }
+
+    .experience-card h3{
+      margin:0 0 7px;
+      font-size:21px;
+      line-height:1.25;
+    }
+
+    .experience-location{
+      margin-bottom:14px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      line-height:1.5;
+    }
+
+    .experience-card ul{
+      margin:0;
+      padding-left:18px;
+    }
+
+    .experience-card li{
+      margin:9px 0;
+      color:var(--text);
+      line-height:1.65;
+    }
+
+    .skills-card{
+      margin-top:16px;
+    }
+
+    .skills-card h3{
+      margin-bottom:14px;
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+    }
+
+    .skills span{
+      padding:8px 11px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--text);
+      background:rgba(255,255,255,.035);
+      font-family:var(--mono);
+      font-size:12px;
+    }
+
+    .experience-cta{
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(34,197,94,.07),
+          rgba(59,130,246,.07),
+          rgba(167,139,250,.07)
+        );
+    }
+
+    .experience-cta p{
+      margin:0;
+      color:var(--text);
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    @media (max-width:980px){
+      .experience-grid,
+      .experience-stats{
+        grid-template-columns:1fr;
+      }
+
+      .experience-title{
+        max-width:none;
+      }
+    }
+  </style>
 </head>
 
 <body data-theme="aurora" data-page="experience">
@@ -14,118 +274,330 @@
 
   <header>
     <div class="topbar">
+
       <div class="brand">
-        <div class="logo">QG</div>
+
+        <div class="logo" aria-hidden="true">
+          QG
+        </div>
+
         <div>
           <h1>Quentin Grant</h1>
-          <p>AWS Cloud Infrastructure • IT Operations • Cloud Security</p>
+          <p>
+            Cloud Engineering • AWS Infrastructure • Automation & Operations
+          </p>
         </div>
+
       </div>
 
-      <nav>
+
+      <nav aria-label="Primary">
+
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
-        <a href="experience.html">Experience</a>
+        <a href="experience.html" class="active">Experience</a>
         <a href="education.html">Education</a>
         <a href="contact.html">Contact</a>
+
       </nav>
 
+
       <div class="actions">
-        <button class="btn" id="themeBtn">Theme: Aurora</button>
-        <button class="btn" id="modeBtn">Mode: Dark</button>
+
+        <button class="btn" id="themeBtn" type="button">
+          Theme: Aurora
+        </button>
+
+        <button class="btn" id="modeBtn" type="button">
+          Mode: Dark
+        </button>
+
+        <a class="btn" href="mailto:Quentingrant82@gmail.com">
+          Email
+        </a>
+
+        <a
+          class="btn primary"
+          href="https://www.linkedin.com/in/quentingrant/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+
       </div>
+
     </div>
   </header>
 
-  <main id="content">
 
-    <section class="card pageHero">
-      <p class="kicker"><span class="dot"></span>Experience</p>
+  <main id="content" class="experience-shell">
 
-      <h2 class="pageTitle">
-        Cloud Support, Systems Operations, and Network Experience
+
+    <!-- EXPERIENCE HERO -->
+
+    <section class="card experience-hero">
+
+      <div class="experience-hero-inner">
+
+        <div class="experience-kicker">
+          Professional Experience
+        </div>
+
+        <h2 class="experience-title">
+          Infrastructure experience that became cloud engineering.
+        </h2>
+
+        <p class="experience-lead">
+          My professional foundation was built through network engineering,
+          enterprise IT operations, infrastructure support, troubleshooting,
+          and technical problem solving. Over 9+ years, I have worked in
+          environments where reliability, security, incident response,
+          and accountability matter. I now apply that foundation to
+          hands-on AWS cloud engineering, automation, Infrastructure as
+          Code, containers, CI/CD, and monitoring.
+        </p>
+
+        <div class="experience-chips">
+
+          <span class="experience-chip">
+            IT Operations
+          </span>
+
+          <span class="experience-chip">
+            Network Engineering
+          </span>
+
+          <span class="experience-chip">
+            Infrastructure Support
+          </span>
+
+          <span class="experience-chip">
+            Troubleshooting
+          </span>
+
+          <span class="experience-chip">
+            Cloud Engineering
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE HIGHLIGHTS -->
+
+    <section class="experience-stats">
+
+      <div class="experience-stat card">
+
+        <div class="experience-stat-number">
+          9+
+        </div>
+
+        <div class="experience-stat-label">
+          Years IT Operations & Infrastructure Experience
+        </div>
+
+      </div>
+
+
+      <div class="experience-stat card">
+
+        <div class="experience-stat-number">
+          AWS
+        </div>
+
+        <div class="experience-stat-label">
+          Hands-On Cloud Engineering & Operations
+        </div>
+
+      </div>
+
+
+      <div class="experience-stat card">
+
+        <div class="experience-stat-number">
+          55/55
+        </div>
+
+        <div class="experience-stat-label">
+          Cloud Engineering Capstone Completed
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+
+    <section class="card experience-section">
+
+      <h2 class="experience-section-title">
+        Professional Experience
       </h2>
 
-      <p class="sub">
-        My background includes enterprise infrastructure support, network troubleshooting, and systems operations. 
-        I specialize in diagnosing complex technical issues, performing root-cause analysis, improving system reliability, and applying security-focused practices to maintain secure and reliable infrastructure.
-    </section>
 
-    <section class="card statsSection">
-      <div class="statsGrid">
+      <div class="experience-grid">
 
-        <div class="statCard">
-          <div class="statNumber">20+</div>
-          <div class="statLabel">Daily Infrastructure Issues Diagnosed & Resolved</div>
-        </div>
 
-        <div class="statCard">
-          <div class="statNumber">Security Improvements</div>
-          <div class="statLabel">Vulnerability Remediation & Infrastructure Hardening</div>
-        </div>
+        <!-- EXPRESS EMPLOYMENT -->
 
-        <div class="statCard">
-          <div class="statNumber">Network Reliability</div>
-          <div class="statLabel">Enterprise Connectivity Issues Diagnosed & Resolved</div>
-        </div>
+        <article class="experience-card">
 
-      </div>
-    </section>
+          <h3>
+            Contractor • Express Employment Professionals
+          </h3>
 
-    <section class="card section">
-      <h2>Professional Experience</h2>
-
-      <div class="twoCol">
-
-        <div class="item">
-          <h3>Contractor • Express Employment Professionals</h3>
-          <div class="where">Columbia, SC • March 2018 - June 2025</div>
-
-          <ul>
-            <li> Managed a high-volume technical support queue, resolving 20+ daily escalated infrastructure, systems, and network issues across enterprise Windows and Linux environments. </li>
-            <li> Configured, maintained, and audited critical network connectivity pathways, including enterprise switches, routers, corporate VPNs, and firewall security policies. </li>
-            <li> Executed root-cause analysis (RCA) on recurring technical incidents to isolate hardware, software, and transport-layer failures, significantly improving overall system uptime. </li>
-            <li> Championed security compliance protocols during systems upgrades, while actively auditing access controls to remediate vulnerabilities and enforced least-privilege principles. </li>
-            <li> Formulated comprehensive technical documentation and runbooks for incident resolution to standardize internal engineering workflows and accelerate team response times. </li>
-          </ul>
-        </div>
-
-        <div class="item">
-
-          <h3>Network Technician • Virginia College</h3>
-          <div class="where">Columbia, SC • January 2016 - January 2018</div>
-
-          <ul>
-            <li> Engineered, deployed, and troubleshot campus-wide physical and logical network infrastructure spanning fiber, copper, and high-density wireless distribution systems. </li>
-            <li> Isolated and remediated complex connectivity and routing anomalies under tight SLAs, utilizing packet analysis and command-line diagnostic utilities to minimize user downtime. </li>
-            <li> Audited network performance metrics, identified throughput bottlenecks to proactively implement optimizations that reduced packet latency and stabilized data delivery. </li>
-            <li> Administered secure data handling protocols, orchestrated automated system backup schedules and enforced data encryption standards to prevent information loss. </li>
-          </ul>
-
-          <div class="topGap"></div>
-
-          <h3>Key Skills Applied</h3>
-          <div class="stack">
-            <span class="tag">AWS Cloud Infrastructure</span>
-            <span class="tag">Linux & Windows Administration</span>
-            <span class="tag">Networking & Troubleshooting</span>
-            <span class="tag">Cloud Security & IAM</span>
-            <span class="tag">Terraform & Automation</span>
-            <span class="tag">Technical Documentation</span>
+          <div class="experience-location">
+            Columbia, SC • March 2018 – June 2025
           </div>
 
-        </div>
+          <ul>
+
+            <li>
+              Managed a high-volume technical support queue,
+              resolving 20+ daily escalated infrastructure,
+              systems, and network issues across enterprise
+              Windows and Linux environments.
+            </li>
+
+            <li>
+              Configured, maintained, and audited network
+              connectivity involving enterprise switches,
+              routers, corporate VPNs, and firewall security
+              policies.
+            </li>
+
+            <li>
+              Performed root-cause analysis on recurring
+              technical incidents to isolate hardware,
+              software, and network failures.
+            </li>
+
+            <li>
+              Supported security compliance activities,
+              access-control reviews, and least-privilege
+              practices during systems changes.
+            </li>
+
+            <li>
+              Created technical documentation and runbooks
+              to standardize incident-resolution workflows
+              and improve team response.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- VIRGINIA COLLEGE -->
+
+        <article class="experience-card">
+
+          <h3>
+            Network Technician • Virginia College
+          </h3>
+
+          <div class="experience-location">
+            Columbia, SC • January 2016 – January 2018
+          </div>
+
+          <ul>
+
+            <li>
+              Deployed and troubleshot campus-wide physical
+              and logical network infrastructure across fiber,
+              copper, and wireless environments.
+            </li>
+
+            <li>
+              Diagnosed connectivity and routing issues using
+              packet analysis and command-line troubleshooting
+              utilities.
+            </li>
+
+            <li>
+              Monitored network performance, identified
+              throughput bottlenecks, and implemented
+              infrastructure improvements.
+            </li>
+
+            <li>
+              Supported secure data handling, system backup
+              processes, and data protection practices.
+            </li>
+
+          </ul>
+
+        </article>
 
       </div>
+
+
+      <!-- KEY SKILLS -->
+
+      <article class="experience-card skills-card">
+
+        <h3>
+          Skills Applied Across My Career
+        </h3>
+
+        <div class="skills">
+
+          <span>AWS Cloud Engineering</span>
+          <span>IT Operations</span>
+          <span>Infrastructure Support</span>
+          <span>Network Engineering</span>
+          <span>Technical Troubleshooting</span>
+          <span>Cloud Security & IAM</span>
+          <span>Terraform & IaC</span>
+          <span>Python & Boto3</span>
+          <span>Linux</span>
+          <span>Docker</span>
+          <span>CI/CD</span>
+          <span>Monitoring</span>
+
+        </div>
+
+      </article>
+
     </section>
 
-    <footer class="footer">
-      <p>© <span id="year"></span> Quentin Grant</p>
-    </footer>
+
+    <!-- CAREER POSITIONING -->
+
+    <section class="experience-cta card">
+
+      <p>
+        My experience gives me a strong operational foundation for
+        cloud engineering: understand the environment, troubleshoot
+        systematically, protect the infrastructure, automate repeatable
+        work, and build for reliability.
+      </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+      <div>
+        © <span id="year"></span> Quentin Grant
+      </div>
+
+    </div>
 
   </main>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>
