@@ -3,12 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="About Quentin Grant — AWS Cloud Engineer" />
+
+  <meta
+    name="description"
+    content="About Quentin Grant — Cloud Engineer specializing in AWS infrastructure, automation, and operations."
+  />
+
   <meta property="og:title" content="Quentin Grant | About" />
-  <meta property="og:description" content="AWS Cloud Engineer • AWS Cloud Infrastructure • IT Operations • Security" />
+  <meta
+    property="og:description"
+    content="Cloud Engineering • AWS Infrastructure • Automation & Operations"
+  />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="profile.jpg.jpg" />
+
   <title>Quentin Grant | About</title>
+
   <link rel="stylesheet" href="styles.css" />
 
   <style>
@@ -122,13 +132,6 @@
       background:rgba(255,255,255,.04);
       padding:18px;
       overflow:hidden;
-      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    }
-
-    .about-panel:hover{
-      transform:translateY(-4px);
-      box-shadow:0 18px 34px rgba(0,0,0,.22);
-      border-color:rgba(255,255,255,.2);
     }
 
     .about-panel::before{
@@ -143,7 +146,7 @@
     }
 
     .about-panel h3{
-      margin:0 0 10px;
+      margin:0 0 12px;
       font-size:18px;
     }
 
@@ -151,7 +154,6 @@
       display:flex;
       flex-wrap:wrap;
       gap:8px;
-      margin-top:8px;
     }
 
     .about-focus-tags span{
@@ -165,42 +167,6 @@
       white-space:nowrap;
       border:1px solid var(--line);
       color:var(--text);
-      transition:transform .2s ease, box-shadow .2s ease;
-    }
-
-    .about-focus-tags span:nth-child(1){
-      border-color: color-mix(in oklab, var(--a1) 60%, var(--line));
-      background: color-mix(in oklab, var(--a1) 18%, transparent);
-    }
-
-    .about-focus-tags span:nth-child(2){
-      border-color: color-mix(in oklab, var(--a2) 60%, var(--line));
-      background: color-mix(in oklab, var(--a2) 18%, transparent);
-    }
-
-    .about-focus-tags span:nth-child(3){
-      border-color: color-mix(in oklab, var(--a3) 60%, var(--line));
-      background: color-mix(in oklab, var(--a3) 18%, transparent);
-    }
-
-    .about-focus-tags span:nth-child(4){
-      border-color: color-mix(in oklab, var(--a4) 60%, var(--line));
-      background: color-mix(in oklab, var(--a4) 18%, transparent);
-    }
-
-    .about-focus-tags span:nth-child(5){
-      border-color: color-mix(in oklab, var(--a2) 60%, var(--line));
-      background: color-mix(in oklab, var(--a2) 18%, transparent);
-    }
-
-    .about-focus-tags span:nth-child(6){
-      border-color: color-mix(in oklab, var(--a3) 60%, var(--line));
-      background: color-mix(in oklab, var(--a3) 18%, transparent);
-    }
-
-    .about-focus-tags span:hover{
-      transform:translateY(-2px);
-      box-shadow:0 6px 14px rgba(0,0,0,.25);
     }
 
     .about-list{
@@ -216,7 +182,7 @@
 
     .about-story{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
 
@@ -226,13 +192,6 @@
       border-radius:18px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.035);
-      overflow:hidden;
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-
-    .story-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 18px 34px rgba(0,0,0,.2);
     }
 
     .story-card .story-line{
@@ -256,7 +215,7 @@
 
     .about-stats{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
 
@@ -265,7 +224,7 @@
       padding:20px;
       border-radius:18px;
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
       overflow:hidden;
     }
 
@@ -275,12 +234,11 @@
       inset:0 auto auto 0;
       width:100%;
       height:3px;
-      background:linear-gradient(90deg, var(--a1), var(--a2), var(--a3), var(--a4));
-      opacity:.95;
+      background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3),var(--a4));
     }
 
     .about-stat-number{
-      font-size:40px;
+      font-size:36px;
       font-weight:800;
       line-height:1;
       margin-bottom:10px;
@@ -289,63 +247,22 @@
     .about-stat-label{
       font-family:var(--mono);
       font-size:12px;
-      letter-spacing:.08em;
+      letter-spacing:.06em;
       text-transform:uppercase;
       color:var(--muted);
       line-height:1.5;
-    }
-
-    .about-strength-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:16px;
-    }
-
-    .about-strength{
-      position:relative;
-      padding:20px;
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.035);
-      overflow:hidden;
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-
-    .about-strength:hover{
-      transform:translateY(-4px);
-      box-shadow:0 18px 34px rgba(0,0,0,.2);
-    }
-
-    .about-strength::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:0;
-      right:0;
-      height:3px;
-    }
-
-    .about-strength:nth-child(1)::before{ background:linear-gradient(90deg, var(--a1), transparent); }
-    .about-strength:nth-child(2)::before{ background:linear-gradient(90deg, var(--a2), transparent); }
-    .about-strength:nth-child(3)::before{ background:linear-gradient(90deg, var(--a3), transparent); }
-    .about-strength:nth-child(4)::before{ background:linear-gradient(90deg, var(--a4), transparent); }
-
-    .about-strength h3{
-      margin:0 0 10px;
-      font-size:19px;
-    }
-
-    .about-strength p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.75;
     }
 
     .about-cta-box{
       padding:22px;
       border-radius:18px;
       border:1px solid var(--line);
-      background:linear-gradient(90deg, rgba(34,197,94,.07), rgba(59,130,246,.07), rgba(167,139,250,.07));
+      background:linear-gradient(
+        90deg,
+        rgba(34,197,94,.07),
+        rgba(59,130,246,.07),
+        rgba(167,139,250,.07)
+      );
     }
 
     .about-cta-box p{
@@ -355,31 +272,31 @@
       color:var(--text);
     }
 
-    @media (max-width: 980px){
+    @media (max-width:980px){
       .about-hero-grid,
       .about-story,
-      .about-stats,
-      .about-strength-grid{
+      .about-stats{
         grid-template-columns:1fr;
-      }
-
-      .about-title{
-        max-width:none;
       }
     }
   </style>
 </head>
 
 <body data-theme="aurora" data-page="about">
+
   <a class="skip" href="#content">Skip to content</a>
 
   <header>
     <div class="topbar">
+
       <div class="brand">
         <div class="logo" aria-hidden="true">QG</div>
+
         <div>
           <h1>Quentin Grant</h1>
-          <p>AWS Cloud Infrastructure • IT Operations • Cloud Security</p>
+          <p>
+            Cloud Engineering • AWS Infrastructure • Automation & Operations
+          </p>
         </div>
       </div>
 
@@ -393,163 +310,298 @@
       </nav>
 
       <div class="actions">
-        <button class="btn" id="themeBtn" type="button">Theme: Aurora</button>
-        <button class="btn" id="modeBtn" type="button">Mode: Dark</button>
-        <a class="btn" href="mailto:Quentingrant82@gmail.com">Email</a>
-        <a class="btn primary" href="https://www.linkedin.com/in/quentingrant/" target="_blank" rel="noreferrer">LinkedIn</a>
+
+        <button class="btn" id="themeBtn" type="button">
+          Theme: Aurora
+        </button>
+
+        <button class="btn" id="modeBtn" type="button">
+          Mode: Dark
+        </button>
+
+        <a class="btn" href="mailto:Quentingrant82@gmail.com">
+          Email
+        </a>
+
+        <a
+          class="btn primary"
+          href="https://www.linkedin.com/in/quentingrant/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+
       </div>
     </div>
   </header>
 
+
   <main id="content" class="about-shell">
 
-    <section class="card about-hero">
-      <div class="about-hero-grid">
-        <div class="about-main">
-          <div class="about-kicker">About Me</div>
-          <p class="about-lead">
-            I am an Information Systems graduate with 9+ years of experience in IT operations, network infrastructure, and technical support, transitioning into cloud engineering. 
-            My background in troubleshooting enterprise systems, resolving complex technical issues, and improving infrastructure reliability has provided a strong foundation for working with AWS cloud environments.
 
-            I have hands-on experience with AWS, Terraform, Linux administration, and automation, with a focus on building secure, scalable, and reliable infrastructure. 
-            I enjoy solving complex technical problems, automating processes, and continuously expanding my skills in cloud engineering and DevOps practices.
+    <!-- ABOUT HERO -->
+
+    <section class="card about-hero">
+
+      <div class="about-hero-grid">
+
+        <div class="about-main">
+
+          <div class="about-kicker">
+            About Me
+          </div>
+
+          <p class="about-lead">
+            I am a Cloud Engineer with an M.S. in Information Systems
+            and 9+ years of experience in IT operations, network engineering,
+            and infrastructure support.
+
+            My career has been built around keeping enterprise systems
+            reliable, troubleshooting complex infrastructure problems,
+            and operating in environments where availability and
+            accountability matter.
+
+            I have expanded that infrastructure foundation into hands-on
+            cloud engineering across AWS, Linux, Python, Bash, Terraform,
+            Docker, CI/CD, and monitoring.
           </p>
 
+
           <div class="about-action-row">
-            <a class="btn primary" href="projects.html">View Projects</a>
-            <a class="btn" href="experience.html">View Experience</a>
-            <a class="btn" href="contact.html">Contact Me</a>
+
+            <a
+              class="btn primary"
+              href="projects.html"
+            >
+              View Projects
+            </a>
+
+            <a
+              class="btn"
+              href="experience.html"
+            >
+              View Experience
+            </a>
+
+            <a
+              class="btn"
+              href="contact.html"
+            >
+              Contact Me
+            </a>
+
           </div>
+
 
           <div class="about-mini-row">
-            <span class="about-mini-chip">AWS</span>
-            <span class="about-mini-chip">Linux</span>
-            <span class="about-mini-chip">Networking</span>
+
+            <span class="about-mini-chip">
+              AWS
+            </span>
+
+            <span class="about-mini-chip">
+              Infrastructure
+            </span>
+
+            <span class="about-mini-chip">
+              Automation
+            </span>
+
+            <span class="about-mini-chip">
+              Operations
+            </span>
+
           </div>
+
         </div>
 
+
         <aside class="about-side">
+
           <div class="about-panel">
-            <h3>Core Focus Areas</h3>
+
+            <h3>
+              Core Focus
+            </h3>
+
             <div class="about-focus-tags">
-              <span>AWS Cloud Infrastructure</span>
+
+              <span>AWS Infrastructure</span>
               <span>Cloud Operations</span>
-              <span>Network Engineering</span>
-              <span>Linux Administration</span>
-              <span>Cloud Security</span>
-              <span>Technical Documentation</span>
+              <span>Terraform & IaC</span>
+              <span>Python Automation</span>
+              <span>Docker & CI/CD</span>
+              <span>Networking & Security</span>
+
             </div>
+
           </div>
+
 
           <div class="about-panel">
-            <h3>What I Bring</h3>
+
+            <h3>
+              What I Bring
+            </h3>
+
             <ul class="about-list">
-              <li> Hands-on experience designing, deploying, and troubleshooting AWS environments using core services including EC2, S3, IAM, VPC, CloudFront, Route 53, Lambda, and CloudWatch. 
-                   Skilled in Infrastructure as Code (IaC) with Terraform to automate repeatable and scalable cloud deployments. </li>
 
-              <li> 9+ years of experience supporting enterprise infrastructure, troubleshooting complex network pathways, analyzing connectivity issues, and performing root-cause analysis across Windows and Linux environments. </li>
+              <li>
+                A strong infrastructure and troubleshooting foundation
+                developed through 9+ years of enterprise IT operations.
+              </li>
 
-              <li> Experienced with IAM policies, least-privilege access principles, vulnerability remediation, access control auditing, and infrastructure monitoring practices designed to improve system reliability and operational security. </li>
+              <li>
+                Hands-on AWS cloud engineering experience across
+                infrastructure, automation, security, and operations.
+              </li>
 
-              <li> Utilizing Python, Bash scripting, AWS CLI, and automation practices to streamline operational tasks while creating clear technical documentation and runbooks that improve troubleshooting efficiency and team collaboration. </li>
+              <li>
+                A methodical approach to diagnosing problems,
+                understanding dependencies, and building reliable solutions.
+              </li>
+
             </ul>
+
           </div>
+
         </aside>
+
       </div>
+
     </section>
+
+
+    <!-- PROFESSIONAL STORY -->
 
     <section class="about-story">
-      <article class="story-card card">
-        <div class="story-line"></div>
-        <h3>Why Cloud</h3>
-        <p>
-          Cloud engineering combines the areas I enjoy most: troubleshooting, reliability, security, and automation. 
-          I enjoy understanding how systems connect, solving complex technical problems, and building infrastructure that is more stable, scalable, and dependable.
-        </p>
-      </article>
 
       <article class="story-card card">
+
         <div class="story-line"></div>
-        <h3>How I Work</h3>
+
+        <h3>
+          Infrastructure Foundation
+        </h3>
+
         <p>
-          I approach technical challenges with a methodical troubleshooting mindset: first gaining visibility, identifying root causes, and implementing reliable, repeatable solutions. 
-          I value automation, clear documentation, and effective communication to build infrastructure that is stable, secure, and easier to maintain.
+          My career began with network infrastructure, systems operations,
+          and enterprise technical support. Those experiences shaped how
+          I approach reliability, troubleshooting, security, and operational
+          problem solving.
         </p>
+
       </article>
 
+
       <article class="story-card card">
+
         <div class="story-line"></div>
-        <h3>What I'm Building</h3>
+
+        <h3>
+          Cloud Engineering
+        </h3>
+
         <p>
-          I am building hands-on cloud engineering experience through AWS projects focused on infrastructure automation, security, and reliability. 
-          My current work includes AWS infrastructure, Terraform, Linux administration, Python automation, and DevOps practices to create scalable and maintainable cloud environments.
+          Hands-on AWS training and engineering projects expanded that
+          foundation into cloud infrastructure, automation, Infrastructure
+          as Code, containers, CI/CD, and monitoring.
         </p>
+
       </article>
+
+
+      <article class="story-card card">
+
+        <div class="story-line"></div>
+
+        <h3>
+          Engineering Mindset
+        </h3>
+
+        <p>
+          I approach technical problems systematically: understand the
+          architecture, isolate the issue, solve the root cause, automate
+          repeatable work, and continuously improve reliability.
+        </p>
+
+      </article>
+
     </section>
+
+
+    <!-- HIGHLIGHTS -->
 
     <section class="about-stats">
-      <div class="about-stat card">
-        <div class="about-stat-number">20+</div>
-        <div class="about-stat-label">20+ Enterprise Technical Issues Resolved Daily</div>
-      </div>
 
       <div class="about-stat card">
-        <div class="about-stat-number">Security Improvements</div>
-        <div class="about-stat-label">Vulnerability Remediation & Infrastructure Hardening</div>
+
+        <div class="about-stat-number">
+          9+
+        </div>
+
+        <div class="about-stat-label">
+          Years of IT Operations & Infrastructure Experience
+        </div>
+
       </div>
 
+
       <div class="about-stat card">
-        <div class="about-stat-number">AWS Cloud Engineering</div>
-        <div class="about-stat-label">Hands-On Infrastructure Deployment & Automation Projects</div>
+
+        <div class="about-stat-number">
+          AWS
+        </div>
+
+        <div class="about-stat-label">
+          Hands-On Cloud Engineering & Infrastructure
+        </div>
+
       </div>
+
+
+      <div class="about-stat card">
+
+        <div class="about-stat-number">
+          55/55
+        </div>
+
+        <div class="about-stat-label">
+          Cloud Engineering Capstone Sections Completed
+        </div>
+
+      </div>
+
     </section>
 
-    <section class="about-strength-grid">
-      <article class="about-strength card">
-        <h3>Cloud Support Mindset</h3>
-        <p>
-          I approach cloud challenges with a focus on troubleshooting, reliability, security, and continuous improvement. 
-          I enjoy identifying root causes, improving operational processes, and building dependable infrastructure that teams can rely on.
-        </p>
-      </article>
 
-      <article class="about-strength card">
-        <h3>Technical Foundation</h3>
-        <p>
-          My technical foundation combines 9+ years of IT operations, networking, infrastructure support, and systems administration experience with hands-on AWS, Linux, and Infrastructure as Code practices. 
-          I focus on troubleshooting complex environments, improving reliability, and building secure cloud solutions.
-        </p>
-      </article>
-
-      <article class="about-strength card">
-        <h3>Security Awareness</h3>
-        <p>
-          I apply a security-first approach to infrastructure by focusing on access controls, least-privilege principles, monitoring, and vulnerability remediation. 
-          I prioritize building cloud environments that are secure, reliable, and easier to maintain.
-        </p>
-      </article>
-
-      <article class="about-strength card">
-        <h3>Clear Communication</h3>
-        <p>
-          I value clear documentation and communication because they improve troubleshooting, collaboration, and operational reliability. 
-          Well-documented processes help teams resolve issues faster and maintain consistent, dependable infrastructure.
-        </p>
-      </article>
-    </section>
+    <!-- CTA -->
 
     <section class="about-cta-box card">
+
       <p>
-        I am pursuing Cloud Support Engineer and Junior Cloud Engineer opportunities where I can leverage my background in IT operations, AWS, Terraform, Linux, and networking to troubleshoot and improve cloud infrastructure. 
-        I am passionate about building secure, reliable environments while expanding my expertise in automation and cloud engineering.
+        I am focused on Cloud Engineer, Cloud Support, and Cloud Operations
+        opportunities where I can apply my infrastructure background,
+        AWS skills, automation experience, and troubleshooting mindset
+        to reliable cloud environments.
       </p>
+
     </section>
 
+
     <div class="footer">
-      <div>© <span id="year"></span> Quentin Grant</div>
+
+      <div>
+        © <span id="year"></span> Quentin Grant
+      </div>
+
     </div>
+
   </main>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>
