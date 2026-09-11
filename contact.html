@@ -3,174 +3,663 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Contact Quentin Grant" />
+
+  <meta
+    name="description"
+    content="Contact Quentin Grant — Cloud Engineer specializing in AWS infrastructure, automation, and operations."
+  />
+
+  <meta property="og:title" content="Quentin Grant | Contact" />
+  <meta
+    property="og:description"
+    content="Cloud Engineering • AWS Infrastructure • Automation & Operations"
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.jpg.jpg" />
+
   <title>Quentin Grant | Contact</title>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .contact-shell{
+      display:grid;
+      gap:18px;
+    }
+
+    .contact-hero{
+      position:relative;
+      overflow:hidden;
+      padding:28px;
+    }
+
+    .contact-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(520px 240px at 8% 10%, rgba(34,197,94,.11), transparent 60%),
+        radial-gradient(540px 260px at 86% 18%, rgba(59,130,246,.13), transparent 62%),
+        radial-gradient(480px 240px at 60% 100%, rgba(167,139,250,.11), transparent 60%);
+      pointer-events:none;
+    }
+
+    .contact-hero-inner{
+      position:relative;
+      z-index:1;
+    }
+
+    .contact-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:12px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .contact-kicker::after{
+      content:"";
+      width:56px;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3));
+    }
+
+    .contact-title{
+      margin:0 0 12px;
+      font-size:clamp(32px,4vw,46px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+
+    .contact-lead{
+      margin:0;
+      max-width:68ch;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    .contact-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .contact-chip{
+      padding:9px 13px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+      font-family:var(--mono);
+      font-size:12px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:16px;
+    }
+
+    .contact-card{
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.035);
+    }
+
+    .contact-card.featured{
+      background:
+        linear-gradient(
+          135deg,
+          rgba(34,197,94,.07),
+          rgba(59,130,246,.06),
+          rgba(167,139,250,.05)
+        );
+    }
+
+    .contact-card h2{
+      margin:0 0 10px;
+      font-size:21px;
+    }
+
+    .contact-card h3{
+      margin:22px 0 6px;
+      font-size:15px;
+      font-family:var(--mono);
+      letter-spacing:.04em;
+    }
+
+    .contact-card h3:first-of-type{
+      margin-top:18px;
+    }
+
+    .contact-text{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    .contact-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .contact-email{
+      word-break:break-word;
+    }
+
+    .contact-meta{
+      display:grid;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .contact-meta-item{
+      padding:13px 15px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.025);
+    }
+
+    .contact-meta-label{
+      display:block;
+      margin-bottom:4px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .contact-meta-value{
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    .contact-form{
+      display:grid;
+      gap:10px;
+    }
+
+    .contact-form label{
+      margin-top:6px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      box-sizing:border-box;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(0,0,0,.16);
+      color:var(--text);
+      padding:12px 14px;
+      font:inherit;
+      outline:none;
+    }
+
+    .contact-form textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus{
+      border-color:var(--a2);
+      box-shadow:0 0 0 3px rgba(59,130,246,.10);
+    }
+
+    .contact-form button{
+      width:max-content;
+      margin-top:6px;
+    }
+
+    .contact-status{
+      margin:4px 0 0;
+      line-height:1.5;
+    }
+
+    .contact-bottom{
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(34,197,94,.07),
+          rgba(59,130,246,.07),
+          rgba(167,139,250,.07)
+        );
+    }
+
+    .contact-bottom p{
+      margin:0;
+      color:var(--text);
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    @media (max-width:980px){
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
+
 
 <body data-theme="aurora" data-page="contact">
 
   <a class="skip" href="#content">Skip to content</a>
 
+
   <header>
     <div class="topbar">
+
       <div class="brand">
-        <div class="logo" aria-hidden="true">QG</div>
+
+        <div class="logo" aria-hidden="true">
+          QG
+        </div>
+
         <div>
           <h1>Quentin Grant</h1>
-          <p>AWS Cloud Infrastructure • IT Operations • Cloud Security</p>
+          <p>
+            Cloud Engineering • AWS Infrastructure • Automation & Operations
+          </p>
         </div>
+
       </div>
 
+
       <nav aria-label="Primary">
+
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
         <a href="experience.html">Experience</a>
         <a href="education.html">Education</a>
         <a href="contact.html" class="active">Contact</a>
+
       </nav>
 
+
       <div class="actions">
-        <button class="btn" id="themeBtn" type="button">Theme: Aurora</button>
-        <button class="btn" id="modeBtn" type="button">Mode: Dark</button>
+
+        <button class="btn" id="themeBtn" type="button">
+          Theme: Aurora
+        </button>
+
+        <button class="btn" id="modeBtn" type="button">
+          Mode: Dark
+        </button>
+
+        <a class="btn" href="mailto:Quentingrant82@gmail.com">
+          Email
+        </a>
+
+        <a
+          class="btn primary"
+          href="https://www.linkedin.com/in/quentingrant/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+
       </div>
+
     </div>
   </header>
 
-  <main id="content">
 
-    <section class="card pageHero">
-      <p class="kicker"><span class="dot"></span>Contact</p>
-      <h2 class="pageTitle">Let's connect</h2>
-      <p class="sub">
-        I'm open to connecting with professionals and teams seeking cloud support, junior cloud engineering, and IT operations talent. Reach out through email or LinkedIn to discuss opportunities and collaboration.
-      </p>
-    </section>
+  <main id="content" class="contact-shell">
 
-    <section id="contact" class="card section">
-      <h2>Get In Touch</h2>
 
-      <div class="twoCol">
+    <!-- CONTACT HERO -->
 
-        <div class="item">
-          <h3>Contact Details</h3>
-          <p class="smallText">
-           I welcome opportunities to connect with professionals, hiring teams, and organizations focused on cloud support, infrastructure operations, and technology solutions. 
-           Email is the best way to reach me, and I am also active on LinkedIn.
-          </p>
+    <section class="card contact-hero">
 
-          <div class="heroActions">
-            <a class="btn primary" href="mailto:Quentingrant82.com">
-              Quentingrant82@gmail.com
-            </a>
+      <div class="contact-hero-inner">
 
-            <a class="btn"
-              href="https://www.linkedin.com/in/quentingrant/"
-              target="_blank"
-              rel="noreferrer">
-              LinkedIn
-            </a>
-
-            <button class="btn" id="copyEmail" type="button">
-              Copy Email
-            </button>
-          </div>
-
-          <p class="smallText topGap">
-            Location: Blythewood, South Carolina
-          </p>
-
-          <p class="smallText">
-            Availability: Open to remote and hybrid opportunities in cloud support, cloud operations, and infrastructure engineering.
-          </p>
+        <div class="contact-kicker">
+          Contact
         </div>
 
-        <form
-          class="item"
-          id="contactForm"
-          action="https://formsubmit.co/ajax/Quentingrant82@gmail.com"
-          method="POST"
-        >
-          <h3>Quick Message</h3>
+        <h2 class="contact-title">
+          Let's connect.
+        </h2>
 
-          <label class="small" for="name">Name</label><br />
-          <input id="name" name="name" type="text" required />
+        <p class="contact-lead">
+          I am open to connecting with hiring teams, technology
+          professionals, and organizations looking for cloud engineering,
+          cloud operations, infrastructure, and technical support talent.
+        </p>
 
-          <label class="small" for="email">Email</label><br />
-          <input id="email" name="email" type="email" required />
+        <div class="contact-chips">
 
-          <label class="small" for="msg">Message</label><br />
-          <textarea id="msg" name="message" rows="5" required></textarea>
+          <span class="contact-chip">
+            Cloud Engineering
+          </span>
 
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="New Portfolio Message" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_replyto" value="" />
+          <span class="contact-chip">
+            AWS
+          </span>
 
-          <button class="btn primary" id="submitBtn" type="submit">Send</button>
+          <span class="contact-chip">
+            Cloud Operations
+          </span>
 
-          <p id="formSuccess" class="small topGap" style="display:none;"></p>
-        </form>
+          <span class="contact-chip">
+            Infrastructure
+          </span>
+
+        </div>
 
       </div>
+
     </section>
 
+
+    <!-- CONTACT DETAILS + FORM -->
+
+    <section class="contact-grid">
+
+
+      <article class="card contact-card featured">
+
+        <h2>
+          Get In Touch
+        </h2>
+
+        <p class="contact-text">
+          Email is the best way to reach me. You can also connect
+          with me on LinkedIn to discuss opportunities, collaboration,
+          or cloud engineering work.
+        </p>
+
+
+        <div class="contact-actions">
+
+          <a
+            class="btn primary contact-email"
+            href="mailto:Quentingrant82@gmail.com"
+          >
+            Quentingrant82@gmail.com
+          </a>
+
+          <a
+            class="btn"
+            href="https://www.linkedin.com/in/quentingrant/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <button
+            class="btn"
+            id="copyEmail"
+            type="button"
+          >
+            Copy Email
+          </button>
+
+        </div>
+
+
+        <div class="contact-meta">
+
+          <div class="contact-meta-item">
+
+            <span class="contact-meta-label">
+              Location
+            </span>
+
+            <span class="contact-meta-value">
+              Blythewood, South Carolina
+            </span>
+
+          </div>
+
+
+          <div class="contact-meta-item">
+
+            <span class="contact-meta-label">
+              Availability
+            </span>
+
+            <span class="contact-meta-value">
+              Open to remote and hybrid opportunities in cloud support,
+              cloud operations, and infrastructure engineering.
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <form
+        class="card contact-card contact-form"
+        id="contactForm"
+        action="https://formsubmit.co/ajax/Quentingrant82@gmail.com"
+        method="POST"
+      >
+
+        <h2>
+          Send a Message
+        </h2>
+
+        <p class="contact-text">
+          Have an opportunity or want to connect? Send a message
+          directly through the form below.
+        </p>
+
+
+        <label for="name">
+          Name
+        </label>
+
+        <input
+          id="name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          required
+        />
+
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+        />
+
+
+        <label for="msg">
+          Message
+        </label>
+
+        <textarea
+          id="msg"
+          name="message"
+          rows="6"
+          required
+        ></textarea>
+
+
+        <input
+          type="hidden"
+          name="_captcha"
+          value="false"
+        />
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Portfolio Message"
+        />
+
+        <input
+          type="hidden"
+          name="_template"
+          value="table"
+        />
+
+        <input
+          type="hidden"
+          name="_replyto"
+          value=""
+        />
+
+
+        <button
+          class="btn primary"
+          id="submitBtn"
+          type="submit"
+        >
+          Send Message
+        </button>
+
+
+        <p
+          id="formSuccess"
+          class="contact-status"
+          style="display:none;"
+          aria-live="polite"
+        ></p>
+
+      </form>
+
+
+    </section>
+
+
+    <!-- CLOSING -->
+
+    <section class="contact-bottom card">
+
+      <p>
+        I bring an infrastructure-first mindset to cloud engineering:
+        understand the environment, troubleshoot systematically,
+        automate repeatable work, and build for reliability.
+      </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
     <div class="footer">
-      <div>© <span id="year"></span> Quentin Grant</div>
+
+      <div>
+        © <span id="year"></span> Quentin Grant
+      </div>
+
     </div>
 
   </main>
 
+
   <script src="script.js"></script>
 
+
   <script>
+
     const contactForm = document.getElementById("contactForm");
     const submitBtn = document.getElementById("submitBtn");
     const successMsg = document.getElementById("formSuccess");
     const emailInput = document.getElementById("email");
 
+
     contactForm.addEventListener("submit", async function (e) {
+
       e.preventDefault();
 
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
+
       successMsg.style.display = "none";
       successMsg.textContent = "";
 
+
       const formData = new FormData(contactForm);
+
       formData.set("_replyto", emailInput.value);
 
+
       try {
-        const response = await fetch(contactForm.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json"
+
+        const response = await fetch(
+          contactForm.action,
+          {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json"
+            }
           }
-        });
+        );
+
 
         const data = await response.json();
 
+
         if (response.ok && data.success === "true") {
+
           successMsg.style.display = "block";
           successMsg.style.color = "";
-          successMsg.textContent = "✅ Thanks! Your message has been sent. I’ll be in touch soon.";
+          successMsg.textContent =
+            "Thanks! Your message has been sent. I’ll be in touch soon.";
+
           contactForm.reset();
+
         } else {
+
           successMsg.style.display = "block";
           successMsg.style.color = "#ff8a8a";
-          successMsg.textContent = "Something went wrong. Please try again.";
+          successMsg.textContent =
+            "Something went wrong. Please try again.";
+
         }
+
+
       } catch (error) {
+
         successMsg.style.display = "block";
         successMsg.style.color = "#ff8a8a";
-        successMsg.textContent = "Unable to send right now. Please try again.";
+        successMsg.textContent =
+          "Unable to send right now. Please try again.";
+
       } finally {
+
         submitBtn.disabled = false;
-        submitBtn.textContent = "Send";
+        submitBtn.textContent = "Send Message";
+
       }
+
     });
+
   </script>
 
 </body>
