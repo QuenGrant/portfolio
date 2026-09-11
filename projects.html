@@ -3,8 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Projects by Quentin Grant" />
+
+  <meta
+    name="description"
+    content="Cloud engineering projects by Quentin Grant — AWS infrastructure, automation, Infrastructure as Code, containers, CI/CD, monitoring, and cloud operations."
+  />
+
+  <meta property="og:title" content="Quentin Grant | Projects" />
+  <meta
+    property="og:description"
+    content="Cloud Engineering • AWS Infrastructure • Automation & Operations"
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.jpg.jpg" />
+
   <title>Quentin Grant | Projects</title>
+
   <link rel="stylesheet" href="styles.css" />
 
   <style>
@@ -24,9 +38,9 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(500px 240px at 10% 10%, rgba(34,197,94,.10), transparent 60%),
-        radial-gradient(520px 260px at 85% 20%, rgba(59,130,246,.12), transparent 60%),
-        radial-gradient(460px 240px at 60% 100%, rgba(167,139,250,.10), transparent 60%);
+        radial-gradient(520px 240px at 8% 10%, rgba(34,197,94,.10), transparent 60%),
+        radial-gradient(540px 260px at 86% 18%, rgba(59,130,246,.12), transparent 62%),
+        radial-gradient(480px 240px at 60% 100%, rgba(167,139,250,.10), transparent 60%);
       pointer-events:none;
     }
 
@@ -52,16 +66,15 @@
       width:56px;
       height:2px;
       border-radius:999px;
-      background:linear-gradient(90deg, var(--a1), var(--a2), var(--a3));
-      opacity:.9;
+      background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3));
     }
 
     .projects-title{
       margin:0 0 12px;
-      font-size:clamp(30px, 4vw, 44px);
+      font-size:clamp(30px,4vw,44px);
       line-height:1.05;
       letter-spacing:-.03em;
-      max-width:12ch;
+      max-width:14ch;
     }
 
     .projects-lead{
@@ -69,7 +82,7 @@
       max-width:68ch;
       color:var(--muted);
       font-size:16px;
-      line-height:1.8;
+      line-height:1.75;
     }
 
     .projects-mini-row{
@@ -80,7 +93,7 @@
     }
 
     .projects-mini-chip{
-      padding:10px 14px;
+      padding:9px 13px;
       border-radius:999px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.05);
@@ -107,36 +120,23 @@
 
     .project-group-title::after{
       content:"";
-      height:2px;
       width:48px;
+      height:2px;
       border-radius:999px;
-      background:linear-gradient(90deg, var(--a2), var(--a3));
-      opacity:.9;
-    }
-
-    .project-stack{
-      display:grid;
-      gap:16px;
+      background:linear-gradient(90deg,var(--a2),var(--a3));
     }
 
     .project-card{
-      padding:18px;
+      padding:20px;
       border-radius:18px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.035);
-      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    }
-
-    .project-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 20px 40px rgba(0,0,0,.22);
-      border-color:rgba(255,255,255,.2);
     }
 
     .project-top{
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:18px;
+      grid-template-columns:1.05fr .95fr;
+      gap:20px;
       align-items:start;
     }
 
@@ -146,67 +146,51 @@
 
     .project-copy h3{
       margin:0 0 8px;
-      font-size:28px;
+      font-size:27px;
       line-height:1.1;
       letter-spacing:-.02em;
     }
 
     .project-subtitle{
-      margin:0 0 8px;
-      font-size:16px;
+      margin:0 0 9px;
       color:var(--text);
-      opacity:.92;
+      font-size:16px;
+      line-height:1.55;
     }
 
     .project-meta{
+      margin-bottom:14px;
+      color:var(--muted);
       font-family:var(--mono);
       font-size:12px;
-      color:var(--muted);
-      margin-bottom:12px;
       line-height:1.6;
     }
 
     .project-desc{
       margin:0 0 14px;
       color:var(--muted);
-      line-height:1.75;
+      line-height:1.7;
     }
 
     .project-pills{
       display:flex;
       flex-wrap:wrap;
       gap:8px;
-      margin:0 0 14px;
+      margin-bottom:14px;
     }
 
     .project-pills span{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:8px 12px;
+      padding:7px 11px;
       border-radius:999px;
       border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
       font-family:var(--mono);
       font-size:12px;
-      white-space:nowrap;
       color:var(--text);
-    }
-
-    .project-pills span:nth-child(4n+1){
-      border-color: color-mix(in oklab, var(--a1) 60%, var(--line));
-      background: color-mix(in oklab, var(--a1) 16%, transparent);
-    }
-    .project-pills span:nth-child(4n+2){
-      border-color: color-mix(in oklab, var(--a2) 60%, var(--line));
-      background: color-mix(in oklab, var(--a2) 16%, transparent);
-    }
-    .project-pills span:nth-child(4n+3){
-      border-color: color-mix(in oklab, var(--a3) 60%, var(--line));
-      background: color-mix(in oklab, var(--a3) 16%, transparent);
-    }
-    .project-pills span:nth-child(4n+4){
-      border-color: color-mix(in oklab, var(--a4) 60%, var(--line));
-      background: color-mix(in oklab, var(--a4) 16%, transparent);
+      white-space:nowrap;
     }
 
     .project-list{
@@ -216,43 +200,51 @@
     }
 
     .project-list li{
-      margin:8px 0;
-      line-height:1.65;
+      margin:7px 0;
+      line-height:1.6;
     }
 
     .project-visual{
       min-width:0;
     }
 
-    .project-img{
+    .architecture-visual{
       width:100%;
-      height:100%;
-      min-height:280px;
-      max-height:360px;
-      object-fit:cover;
+      min-height:270px;
       border-radius:16px;
       border:1px solid var(--line);
+      background:#0b1220;
+      overflow:hidden;
+    }
+
+    .architecture-visual svg{
       display:block;
-      background:rgba(255,255,255,.03);
+      width:100%;
+      height:auto;
     }
 
     .project-footer-row{
       display:flex;
-      gap:10px;
       flex-wrap:wrap;
-      margin-top:16px;
+      gap:10px;
+      margin-top:17px;
     }
 
     .project-note{
-      margin-top:8px;
+      margin-top:9px;
+      color:var(--muted);
       font-family:var(--mono);
       font-size:12px;
-      color:var(--muted);
+      line-height:1.6;
     }
 
-    @media (max-width: 980px){
+    @media (max-width:980px){
       .project-top{
         grid-template-columns:1fr;
+      }
+
+      .architecture-visual{
+        min-height:220px;
       }
 
       .projects-title{
@@ -262,277 +254,1932 @@
       .project-copy h3{
         font-size:24px;
       }
-
-      .project-img{
-        min-height:220px;
-      }
     }
   </style>
 </head>
 
+
 <body data-theme="aurora" data-page="projects">
+
   <a class="skip" href="#content">Skip to content</a>
+
 
   <header>
     <div class="topbar">
+
       <div class="brand">
-        <div class="logo" aria-hidden="true">QG</div>
+
+        <div class="logo" aria-hidden="true">
+          QG
+        </div>
+
         <div>
           <h1>Quentin Grant</h1>
-          <p>AWS Cloud Infrastructure • IT Operations • Cloud Security</p>
+
+          <p>
+            Cloud Engineering • AWS Infrastructure • Automation & Operations
+          </p>
         </div>
+
       </div>
 
+
       <nav aria-label="Primary">
+
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html" class="active">Projects</a>
         <a href="experience.html">Experience</a>
         <a href="education.html">Education</a>
         <a href="contact.html">Contact</a>
+
       </nav>
 
+
       <div class="actions">
-        <button class="btn" id="themeBtn" type="button">Theme: Aurora</button>
-        <button class="btn" id="modeBtn" type="button">Mode: Dark</button>
-        <a class="btn" href="mailto:Quentingrant82@gmail.com">Email</a>
-        <a class="btn primary" href="https://www.linkedin.com/in/quentingrant/" target="_blank" rel="noreferrer">LinkedIn</a>
+
+        <button class="btn" id="themeBtn" type="button">
+          Theme: Aurora
+        </button>
+
+        <button class="btn" id="modeBtn" type="button">
+          Mode: Dark
+        </button>
+
+        <a class="btn" href="mailto:Quentingrant82@gmail.com">
+          Email
+        </a>
+
+        <a
+          class="btn primary"
+          href="https://www.linkedin.com/in/quentingrant/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+
       </div>
+
     </div>
   </header>
 
+
   <main id="content" class="projects-shell">
 
+
+    <!-- HERO -->
+
     <section class="card projects-hero">
+
       <div class="projects-hero-inner">
-        <div class="projects-kicker">Cloud Engineering Projects</div>
+
+        <div class="projects-kicker">
+          Cloud Engineering Portfolio
+        </div>
+
+        <h2 class="projects-title">
+          Engineering work built around AWS.
+        </h2>
+
         <p class="projects-lead">
-          These projects demonstrate hands-on experience designing, deploying, and troubleshooting cloud environments using AWS, Infrastructure as Code, networking, automation, and security best practices. 
-          Each project reflects a focus on reliability, operational excellence, and building scalable infrastructure solutions.
+          Hands-on projects demonstrating AWS infrastructure,
+          automation, Infrastructure as Code, containerization,
+          CI/CD, monitoring, networking, and cloud operations.
         </p>
 
         <div class="projects-mini-row">
-          <span class="projects-mini-chip">AWS Cloud Infrastructure</span>
-          <span class="projects-mini-chip">Infrastructure as Code(IAC)</span>
-          <span class="projects-mini-chip">Cloud Operations</span>
-          <span class="projects-mini-chip">Security & Reliability</span>
+
+          <span class="projects-mini-chip">AWS</span>
+          <span class="projects-mini-chip">Terraform & IaC</span>
+          <span class="projects-mini-chip">Python & Bash</span>
+          <span class="projects-mini-chip">Docker & CI/CD</span>
+          <span class="projects-mini-chip">Monitoring & Operations</span>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- FEATURED PROJECT -->
 
     <section class="card project-group">
-      <h2 class="project-group-title">Cloud Infrastructure & Delivery</h2>
 
-      <div class="project-stack">
-        <article class="project-card">
-          <div class="project-top">
-            <div class="project-copy">
-              <h3>AWS Static Website Deployment & CDN Architecture</h3>
-              <div class="project-subtitle">
-                Designed and deployed a secure, scalable static website architecture using Amazon S3 and CloudFront with IAM-based access controls and optimized content delivery.
-              </div>
+      <h2 class="project-group-title">
+        Featured Cloud Engineering Project
+      </h2>
 
-              <div class="project-meta">
-                Amazon S3 • CloudFront • IAM • Route 53
-              </div>
 
-              <div class="project-pills">
-                <span>Amazon S3</span>
-                <span>CloudFront CDN</span>
-                <span>IAM Security</span>
-                <span>Static Website Architecture</span>
-              </div>
+      <article class="project-card">
 
-              <p class="project-desc">
-                Designed and deployed a secure AWS static website architecture using S3, IAM, and CloudFront to enable scalable content delivery with controlled access and improved performance.
-              </p>
+        <div class="project-top">
 
-              <ul class="project-list">
-                <li>Configured secure Amazon S3 static website hosting with controlled access permissions.</li>
-                <li>Applied IAM least-privilege policies to strengthen cloud security.</li>
-                <li>Enabled S3 versioning for improved durability and recovery.</li>
-                <li>Integrated CloudFront CDN for optimized content delivery and scalability.</li>
-              </ul>
 
-              <div class="project-footer-row">
-                <a class="btn primary" href="https://quentingrant.github.io/Updated-Technical-Portfolio/" target="_blank" rel="noreferrer">View Live</a>
-                <a class="btn" href="https://github.com/QuentinGrant/Updated-Technical-Portfolio" target="_blank" rel="noreferrer">GitHub</a>
-              </div>
+          <div class="project-copy">
 
-              <div class="project-note">
-                Designed and deployed to demonstrate secure AWS infrastructure practices, scalable content delivery, and cloud architecture principles.
-              </div>
+            <h3>
+              Cloud Operations Dashboard
+            </h3>
+
+            <p class="project-subtitle">
+              End-to-end AWS cloud engineering capstone combining
+              infrastructure, application development, automation,
+              containerization, CI/CD, monitoring, and security.
+            </p>
+
+            <div class="project-meta">
+              AWS • Python • Flask • RDS MySQL • Terraform • Docker • GitHub Actions • CloudWatch
             </div>
 
-            <div class="project-visual">
-              <img src="images/s3.png" alt="AWS S3 static website architecture diagram" class="project-img">
+            <div class="project-pills">
+
+              <span>AWS</span>
+              <span>Terraform / IaC</span>
+              <span>Python / Boto3</span>
+              <span>Docker</span>
+              <span>CI/CD</span>
+              <span>CloudWatch</span>
+
             </div>
+
+            <p class="project-desc">
+              Built a cloud operations application that accepts and
+              retrieves operational messages while integrating AWS
+              infrastructure, a Python Flask application, a private
+              MySQL database, Docker, Terraform, Python automation,
+              GitHub Actions, and CloudWatch.
+            </p>
+
+            <ul class="project-list">
+
+              <li>
+                Designed AWS VPC networking with public application
+                and private database subnets.
+              </li>
+
+              <li>
+                Built a Python Flask application backed by Amazon RDS
+                for MySQL.
+              </li>
+
+              <li>
+                Containerized the application using Docker.
+              </li>
+
+              <li>
+                Defined infrastructure using Terraform and Infrastructure
+                as Code practices.
+              </li>
+
+              <li>
+                Developed Python and Boto3 automation for AWS operations.
+              </li>
+
+              <li>
+                Built GitHub Actions workflows for CI/CD validation
+                and Docker image delivery.
+              </li>
+
+              <li>
+                Applied CloudWatch monitoring, logging, troubleshooting,
+                and operational validation.
+              </li>
+
+            </ul>
+
+            <div class="project-footer-row">
+
+              <a
+                class="btn primary"
+                href="https://github.com/QuenGrant/cloud-engineer-journey"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View GitHub
+              </a>
+
+            </div>
+
+            <div class="project-note">
+              Cloud Engineering Capstone • 55/55 sections completed
+            </div>
+
           </div>
-        </article>
-      </div>
+
+
+          <!-- FEATURED ARCHITECTURE -->
+
+          <div class="project-visual">
+
+            <div
+              class="architecture-visual"
+              role="img"
+              aria-label="Cloud Operations Dashboard architecture"
+            >
+
+              <svg
+                viewBox="0 0 700 430"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+
+                <defs>
+
+                  <linearGradient id="featuredBg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0b1220"/>
+                    <stop offset="55%" stop-color="#111827"/>
+                    <stop offset="100%" stop-color="#16112b"/>
+                  </linearGradient>
+
+                  <linearGradient id="featuredLine" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#22c55e"/>
+                    <stop offset="50%" stop-color="#3b82f6"/>
+                    <stop offset="100%" stop-color="#a78bfa"/>
+                  </linearGradient>
+
+                </defs>
+
+                <rect width="700" height="430" rx="18" fill="url(#featuredBg)"/>
+
+                <rect x="28" y="25" width="644" height="2" rx="1" fill="url(#featuredLine)"/>
+
+                <text x="42" y="62"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="20"
+                      font-weight="700">
+                  Cloud Operations Dashboard
+                </text>
+
+                <text x="42" y="84"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="11">
+                  AWS VPC • Public Application • Private Database
+                </text>
+
+
+                <!-- USERS -->
+
+                <rect x="42" y="145" width="120" height="72" rx="14"
+                      fill="#172033" stroke="#334155"/>
+
+                <circle cx="78" cy="181" r="15"
+                        fill="none" stroke="#60a5fa" stroke-width="2"/>
+
+                <path d="M68 203 Q78 190 88 203"
+                      fill="none" stroke="#60a5fa" stroke-width="2"/>
+
+                <text x="99" y="177"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="13"
+                      font-weight="700">
+                  Users
+                </text>
+
+                <text x="99" y="196"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="10">
+                  HTTPS
+                </text>
+
+
+                <!-- VPC -->
+
+                <rect x="195" y="115" width="455" height="245"
+                      rx="20"
+                      fill="none"
+                      stroke="#475569"
+                      stroke-width="2"
+                      stroke-dasharray="7 6"/>
+
+                <text x="218" y="140"
+                      fill="#cbd5e1"
+                      font-family="monospace"
+                      font-size="12"
+                      font-weight="700">
+                  AWS VPC
+                </text>
+
+
+                <!-- PUBLIC SUBNET -->
+
+                <rect x="218" y="158" width="190" height="170"
+                      rx="16"
+                      fill="#0f2018"
+                      stroke="#22c55e"
+                      stroke-opacity=".55"/>
+
+                <text x="238" y="182"
+                      fill="#86efac"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  PUBLIC SUBNET
+                </text>
+
+
+                <!-- EC2 -->
+
+                <rect x="247" y="204" width="132" height="76"
+                      rx="14"
+                      fill="#172033"
+                      stroke="#3b82f6"
+                      stroke-width="2"/>
+
+                <text x="313" y="232"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="15"
+                      font-weight="700">
+                  EC2
+                </text>
+
+                <text x="313" y="252"
+                      text-anchor="middle"
+                      fill="#93c5fd"
+                      font-family="monospace"
+                      font-size="10">
+                  Flask + Docker
+                </text>
+
+                <text x="313" y="268"
+                      text-anchor="middle"
+                      fill="#64748b"
+                      font-family="monospace"
+                      font-size="9">
+                  Application Tier
+                </text>
+
+
+                <!-- PRIVATE SUBNET -->
+
+                <rect x="432" y="158" width="195" height="170"
+                      rx="16"
+                      fill="#19142a"
+                      stroke="#a78bfa"
+                      stroke-opacity=".55"/>
+
+                <text x="452" y="182"
+                      fill="#c4b5fd"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  PRIVATE SUBNET
+                </text>
+
+
+                <!-- RDS -->
+
+                <ellipse cx="529" cy="221" rx="47" ry="14"
+                         fill="#1e293b"
+                         stroke="#a78bfa"
+                         stroke-width="2"/>
+
+                <path d="M482 221 V263 C482 271 503 278 529 278 C555 278 576 271 576 263 V221"
+                      fill="#172033"
+                      stroke="#a78bfa"
+                      stroke-width="2"/>
+
+                <ellipse cx="529" cy="263" rx="47" ry="14"
+                         fill="#172033"
+                         stroke="#a78bfa"
+                         stroke-width="2"/>
+
+                <text x="529" y="228"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="14"
+                      font-weight="700">
+                  RDS
+                </text>
+
+                <text x="529" y="247"
+                      text-anchor="middle"
+                      fill="#c4b5fd"
+                      font-family="monospace"
+                      font-size="10">
+                  MySQL
+                </text>
+
+
+                <!-- CONNECTIONS -->
+
+                <path d="M162 181 H247"
+                      fill="none"
+                      stroke="#60a5fa"
+                      stroke-width="3"/>
+
+                <polygon points="242,176 252,181 242,186"
+                         fill="#60a5fa"/>
+
+                <path d="M379 242 H482"
+                      fill="none"
+                      stroke="url(#featuredLine)"
+                      stroke-width="3"/>
+
+                <polygon points="477,237 487,242 477,247"
+                         fill="#a78bfa"/>
+
+
+                <!-- OPERATIONS -->
+
+                <rect x="238" y="345" width="150" height="44"
+                      rx="12"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="313" y="363"
+                      text-anchor="middle"
+                      fill="#e2e8f0"
+                      font-family="monospace"
+                      font-size="10"
+                      font-weight="700">
+                  INTERNET GATEWAY
+                </text>
+
+                <text x="313" y="378"
+                      text-anchor="middle"
+                      fill="#64748b"
+                      font-family="monospace"
+                      font-size="9">
+                  Public Route
+                </text>
+
+
+                <rect x="432" y="345" width="195" height="44"
+                      rx="12"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="529" y="363"
+                      text-anchor="middle"
+                      fill="#e2e8f0"
+                      font-family="monospace"
+                      font-size="10"
+                      font-weight="700">
+                  CLOUDWATCH
+                </text>
+
+                <text x="529" y="378"
+                      text-anchor="middle"
+                      fill="#64748b"
+                      font-family="monospace"
+                      font-size="9">
+                  Logs • Monitoring
+                </text>
+
+              </svg>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
     </section>
+
+
+    <!-- S3 / CLOUDFRONT -->
 
     <section class="card project-group">
-      <h2 class="project-group-title">Networking & Infrastructure</h2>
 
-      <div class="project-stack">
-        <article class="project-card">
-          <div class="project-top">
-            <div class="project-copy">
-              <h3>AWS VPC & EC2 Network Architecture</h3>
-              <div class="project-subtitle">
-                Designed and deployed a secure AWS network architecture using VPC, subnets, security groups, and network ACLs to control traffic flow, isolate resources, and support reliable EC2 workload deployment.
-              </div>
+      <h2 class="project-group-title">
+        AWS Infrastructure
+      </h2>
 
-              <div class="project-meta">
-                VPC • Subnets • EC2 • Security Groups • Network ACLs
-              </div>
 
-              <div class="project-pills">
-                <span>VPC</span>
-                <span>Subnets</span>
-                <span>EC2</span>
-                <span>Security Groups</span>
-                <span>NACLs</span>
-              </div>
+      <article class="project-card">
 
-              <p class="project-desc">
-                Designed and implemented a segmented AWS VPC architecture using public and private subnets to support secure EC2 deployments, controlled traffic flow, and scalable cloud networking practices.
+        <div class="project-top">
 
-              <ul class="project-list">
-                <li>Designed VPC networking architecture with public and private subnets to isolate workloads and improve security boundaries.</li>
-                <li>Configured route tables and Internet Gateway components to manage controlled external connectivity.</li>
-                <li>Implemented security group rules following least-privilege principles to restrict inbound and outbound access.</li>
-                <li>Applied network ACL configurations to provide additional subnet-level traffic filtering and defense-in-depth security.</li>
-              </ul>
+          <div class="project-copy">
 
-              <div class="project-footer-row">
-                <a class="btn primary" href="https://quentingrant.github.io/Updated-Technical-Portfolio/" target="_blank" rel="noreferrer">View Project</a>
-                <a class="btn" href="https://github.com/QuentinGrant/Updated-Technical-Portfolio" target="_blank" rel="noreferrer">GitHub</a>
-              </div>
+            <h3>
+              AWS Static Website Deployment & CDN Architecture
+            </h3>
 
-              <div class="project-note">
-                Demonstrates secure AWS networking, workload segmentation, and cloud infrastructure design practices.
-              </div>
+            <p class="project-subtitle">
+              AWS-hosted static website architecture using S3,
+              CloudFront, IAM, and Route 53.
+            </p>
+
+            <div class="project-meta">
+              Amazon S3 • CloudFront • IAM • Route 53
             </div>
 
-            <div class="project-visual">
-              <img src="images/vpc.png" alt="AWS VPC and EC2 network lab diagram" class="project-img">
+            <div class="project-pills">
+
+              <span>Amazon S3</span>
+              <span>CloudFront</span>
+              <span>IAM</span>
+              <span>Route 53</span>
+
             </div>
+
+            <p class="project-desc">
+              Designed and deployed a static website architecture
+              using AWS storage, content delivery, DNS, and
+              access-control services.
+            </p>
+
+            <ul class="project-list">
+
+              <li>
+                Configured Amazon S3 for static website content.
+              </li>
+
+              <li>
+                Applied IAM access controls to the architecture.
+              </li>
+
+              <li>
+                Enabled S3 versioning for content recovery.
+              </li>
+
+              <li>
+                Integrated CloudFront for distributed content delivery.
+              </li>
+
+            </ul>
+
+            <div class="project-footer-row">
+
+              <a
+                class="btn primary"
+                href="https://quentingrant.github.io/Updated-Technical-Portfolio/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Live
+              </a>
+
+            </div>
+
           </div>
-        </article>
-      </div>
+
+
+          <!-- S3 ARCHITECTURE -->
+
+          <div class="project-visual">
+
+            <div
+              class="architecture-visual"
+              role="img"
+              aria-label="AWS static website architecture using Route 53, CloudFront, and S3"
+            >
+
+              <svg
+                viewBox="0 0 700 430"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+
+                <defs>
+
+                  <linearGradient id="s3bg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0b1220"/>
+                    <stop offset="55%" stop-color="#111827"/>
+                    <stop offset="100%" stop-color="#16112b"/>
+                  </linearGradient>
+
+                  <linearGradient id="s3line" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#22c55e"/>
+                    <stop offset="50%" stop-color="#3b82f6"/>
+                    <stop offset="100%" stop-color="#a78bfa"/>
+                  </linearGradient>
+
+                </defs>
+
+                <rect width="700" height="430" rx="18" fill="url(#s3bg)"/>
+
+                <rect x="28" y="25" width="644" height="2"
+                      rx="1" fill="url(#s3line)"/>
+
+                <text x="42" y="62"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="20"
+                      font-weight="700">
+                  Static Website + CDN
+                </text>
+
+                <text x="42" y="84"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="11">
+                  Route 53 • CloudFront • S3
+                </text>
+
+
+                <!-- USER -->
+
+                <rect x="42" y="165" width="125" height="72"
+                      rx="14"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <circle cx="77" cy="201" r="15"
+                        fill="none"
+                        stroke="#60a5fa"
+                        stroke-width="2"/>
+
+                <path d="M67 223 Q77 210 87 223"
+                      fill="none"
+                      stroke="#60a5fa"
+                      stroke-width="2"/>
+
+                <text x="100" y="197"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="13"
+                      font-weight="700">
+                  Visitor
+                </text>
+
+                <text x="100" y="216"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="10">
+                  HTTPS
+                </text>
+
+
+                <!-- ROUTE 53 -->
+
+                <rect x="205" y="150" width="135" height="102"
+                      rx="16"
+                      fill="#172033"
+                      stroke="#60a5fa"
+                      stroke-width="2"/>
+
+                <text x="272" y="181"
+                      text-anchor="middle"
+                      fill="#93c5fd"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  ROUTE 53
+                </text>
+
+                <text x="272" y="207"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="15"
+                      font-weight="700">
+                  DNS
+                </text>
+
+                <text x="272" y="229"
+                      text-anchor="middle"
+                      fill="#64748b"
+                      font-family="monospace"
+                      font-size="9">
+                  Domain Routing
+                </text>
+
+
+                <!-- CLOUDFRONT -->
+
+                <rect x="380" y="135" width="145" height="132"
+                      rx="18"
+                      fill="#0f2018"
+                      stroke="#22c55e"
+                      stroke-width="2"/>
+
+                <text x="452" y="169"
+                      text-anchor="middle"
+                      fill="#86efac"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  CLOUDFRONT
+                </text>
+
+                <text x="452" y="197"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="15"
+                      font-weight="700">
+                  CDN
+                </text>
+
+                <text x="452" y="219"
+                      text-anchor="middle"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="9">
+                  Edge Delivery
+                </text>
+
+                <text x="452" y="239"
+                      text-anchor="middle"
+                      fill="#64748b"
+                      font-family="monospace"
+                      font-size="9">
+                  Cached Content
+                </text>
+
+
+                <!-- S3 -->
+
+                <rect x="565" y="155" width="90" height="92"
+                      rx="16"
+                      fill="#19142a"
+                      stroke="#a78bfa"
+                      stroke-width="2"/>
+
+                <path d="M587 181 L610 170 L633 181 L610 192 Z"
+                      fill="none"
+                      stroke="#c4b5fd"
+                      stroke-width="2"/>
+
+                <path d="M587 181 V213 L610 225 L633 213 V181"
+                      fill="none"
+                      stroke="#c4b5fd"
+                      stroke-width="2"/>
+
+                <text x="610" y="207"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="13"
+                      font-weight="700">
+                  S3
+                </text>
+
+                <text x="610" y="240"
+                      text-anchor="middle"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="8">
+                  WEBSITE
+                </text>
+
+
+                <!-- IAM -->
+
+                <rect x="270" y="315" width="160" height="65"
+                      rx="14"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="350" y="343"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="14"
+                      font-weight="700">
+                  IAM
+                </text>
+
+                <text x="350" y="363"
+                      text-anchor="middle"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="9">
+                  Access Control
+                </text>
+
+
+                <!-- CONNECTIONS -->
+
+                <path d="M167 201 H205"
+                      fill="none"
+                      stroke="#60a5fa"
+                      stroke-width="3"/>
+
+                <polygon points="200,196 210,201 200,206"
+                         fill="#60a5fa"/>
+
+                <path d="M340 201 H380"
+                      fill="none"
+                      stroke="url(#s3line)"
+                      stroke-width="3"/>
+
+                <polygon points="375,196 385,201 375,206"
+                         fill="#22c55e"/>
+
+                <path d="M525 201 H565"
+                      fill="none"
+                      stroke="url(#s3line)"
+                      stroke-width="3"/>
+
+                <polygon points="560,196 570,201 560,206"
+                         fill="#a78bfa"/>
+
+                <path d="M350 315 V252"
+                      fill="none"
+                      stroke="#475569"
+                      stroke-width="2"
+                      stroke-dasharray="5 5"/>
+
+              </svg>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
     </section>
+
+
+    <!-- VPC -->
 
     <section class="card project-group">
-      <h2 class="project-group-title">Cloud Operations & Automation</h2>
 
-      <div class="project-stack">
-        <article class="project-card">
-          <div class="project-top">
-            <div class="project-copy">
-              <h3>AWS Systems Manager Operations & Automation</h3>
-              <div class="project-subtitle">
-                Implemented AWS Systems Manager to centralize EC2 instance management, automate maintenance workflows, and improve operational visibility across cloud environments.
-              </div>
+      <h2 class="project-group-title">
+        Networking & Infrastructure
+      </h2>
 
-              <div class="project-meta">
-               AWS Systems Manager • EC2 Management • Patch Automation • Operational Visibility
-              </div>
 
-              <div class="project-pills">
-                <span>AWS Systems Manager</span>
-                <span>EC2 Management</span>
-                <span>Patch Automation</span>
-                <span>Operational Visibility</span>
-              </div>
+      <article class="project-card">
 
-              <p class="project-desc">
-                Implemented AWS Systems Manager to centralize EC2 management, automate maintenance workflows, and improve operational visibility through secure instance administration and monitoring.
-              </p>
+        <div class="project-top">
 
-              <ul class="project-list">
-                <li>Configured AWS Systems Manager Agent and IAM roles to enable secure, controlled remote administration of EC2 instances.</li>
-                <li>Utilized Run Command to execute administrative tasks and streamline management across multiple EC2 environments.</li>
-                <li>Implemented automated patching workflows using Patch Manager and maintenance windows to improve system reliability.</li>
-                <li>Enhanced operational visibility through inventory collection, instance monitoring, and centralized management capabilities.</li>
-              </ul>
+          <div class="project-copy">
 
-              <div class="project-footer-row">
-                <a class="btn primary" href="https://quentingrant.github.io/Updated-Technical-Portfolio/" target="_blank" rel="noreferrer">View Project</a>
-                <a class="btn" href="https://github.com/QuentinGrant/Updated-Technical-Portfolio" target="_blank" rel="noreferrer">GitHub</a>
-              </div>
+            <h3>
+              AWS VPC & EC2 Network Architecture
+            </h3>
 
-              <div class="project-note">
-                Demonstrates cloud operations expertise through automation, efficient infrastructure management, and improved system reliability.
-              </div>
+            <p class="project-subtitle">
+              Segmented AWS networking using VPCs, subnets,
+              route tables, security groups, and network ACLs.
+            </p>
+
+            <div class="project-meta">
+              VPC • Subnets • EC2 • Route Tables • Security Groups • NACLs
             </div>
 
-            <div class="project-visual">
-              <img src="images/ssm.png" alt="AWS Systems Manager architecture diagram" class="project-img">
+            <div class="project-pills">
+
+              <span>VPC</span>
+              <span>Subnets</span>
+              <span>EC2</span>
+              <span>Security Groups</span>
+              <span>NACLs</span>
+
             </div>
+
+            <p class="project-desc">
+              Designed and implemented segmented AWS networking
+              to control traffic flow, isolate workloads, and
+              support secure EC2 deployments.
+            </p>
+
+            <ul class="project-list">
+
+              <li>
+                Designed public and private subnet architecture.
+              </li>
+
+              <li>
+                Configured route tables and Internet Gateway connectivity.
+              </li>
+
+              <li>
+                Applied security group rules to control workload access.
+              </li>
+
+              <li>
+                Used network ACLs as an additional subnet-level
+                traffic control layer.
+              </li>
+
+            </ul>
+
+            <div class="project-footer-row">
+
+              <a
+                class="btn primary"
+                href="https://quentingrant.github.io/Updated-Technical-Portfolio/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Project
+              </a>
+
+            </div>
+
           </div>
-        </article>
-      </div>
+
+
+          <!-- VPC ARCHITECTURE -->
+
+          <div class="project-visual">
+
+            <div
+              class="architecture-visual"
+              role="img"
+              aria-label="AWS VPC architecture with public and private subnets, Internet Gateway, security controls, and EC2"
+            >
+
+              <svg
+                viewBox="0 0 700 430"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+
+                <defs>
+
+                  <linearGradient id="vpcbg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0b1220"/>
+                    <stop offset="55%" stop-color="#111827"/>
+                    <stop offset="100%" stop-color="#16112b"/>
+                  </linearGradient>
+
+                  <linearGradient id="vpcline" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#22c55e"/>
+                    <stop offset="50%" stop-color="#3b82f6"/>
+                    <stop offset="100%" stop-color="#a78bfa"/>
+                  </linearGradient>
+
+                </defs>
+
+                <rect width="700" height="430" rx="18" fill="url(#vpcbg)"/>
+
+                <rect x="28" y="25" width="644" height="2"
+                      rx="1" fill="url(#vpcline)"/>
+
+                <text x="42" y="62"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="20"
+                      font-weight="700">
+                  AWS VPC Network Architecture
+                </text>
+
+                <text x="42" y="84"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="11">
+                  Public Subnet • Private Subnet • Security Controls
+                </text>
+
+
+                <!-- INTERNET -->
+
+                <rect x="42" y="168" width="105" height="72"
+                      rx="14"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <circle cx="77" cy="204" r="17"
+                        fill="none"
+                        stroke="#60a5fa"
+                        stroke-width="2"/>
+
+                <path d="M60 204 H94 M77 187 C68 197 68 211 77 221 M77 187 C86 197 86 211 77 221"
+                      fill="none"
+                      stroke="#60a5fa"
+                      stroke-width="1.5"/>
+
+                <text x="115" y="201"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="11"
+                      font-weight="700">
+                  INTERNET
+                </text>
+
+                <text x="115" y="219"
+                      text-anchor="middle"
+                      fill="#64748b"
+                      font-family="monospace"
+                      font-size="8">
+                  External
+                </text>
+
+
+                <!-- VPC -->
+
+                <rect x="175" y="110" width="475" height="260"
+                      rx="20"
+                      fill="none"
+                      stroke="#475569"
+                      stroke-width="2"
+                      stroke-dasharray="7 6"/>
+
+                <text x="198" y="137"
+                      fill="#cbd5e1"
+                      font-family="monospace"
+                      font-size="12"
+                      font-weight="700">
+                  VPC
+                </text>
+
+
+                <!-- PUBLIC -->
+
+                <rect x="200" y="155" width="200" height="185"
+                      rx="16"
+                      fill="#0f2018"
+                      stroke="#22c55e"
+                      stroke-opacity=".55"/>
+
+                <text x="220" y="180"
+                      fill="#86efac"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  PUBLIC SUBNET
+                </text>
+
+
+                <!-- IGW -->
+
+                <rect x="225" y="202" width="150" height="52"
+                      rx="12"
+                      fill="#172033"
+                      stroke="#22c55e"/>
+
+                <text x="300" y="224"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="13"
+                      font-weight="700">
+                  INTERNET GATEWAY
+                </text>
+
+                <text x="300" y="241"
+                      text-anchor="middle"
+                      fill="#86efac"
+                      font-family="monospace"
+                      font-size="8">
+                  0.0.0.0/0
+                </text>
+
+
+                <!-- PRIVATE -->
+
+                <rect x="420" y="155" width="205" height="185"
+                      rx="16"
+                      fill="#19142a"
+                      stroke="#a78bfa"
+                      stroke-opacity=".55"/>
+
+                <text x="440" y="180"
+                      fill="#c4b5fd"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  PRIVATE SUBNET
+                </text>
+
+
+                <!-- EC2 -->
+
+                <rect x="445" y="202" width="155" height="52"
+                      rx="12"
+                      fill="#172033"
+                      stroke="#3b82f6"
+                      stroke-width="2"/>
+
+                <text x="522" y="224"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="13"
+                      font-weight="700">
+                  EC2
+                </text>
+
+                <text x="522" y="241"
+                      text-anchor="middle"
+                      fill="#93c5fd"
+                      font-family="monospace"
+                      font-size="8">
+                  Workload
+                </text>
+
+
+                <!-- SECURITY GROUP -->
+
+                <rect x="235" y="282" width="130" height="38"
+                      rx="10"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="300" y="306"
+                      text-anchor="middle"
+                      fill="#e2e8f0"
+                      font-family="monospace"
+                      font-size="9"
+                      font-weight="700">
+                  SECURITY GROUP
+                </text>
+
+
+                <!-- NACL -->
+
+                <rect x="457" y="282" width="130" height="38"
+                      rx="10"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="522" y="306"
+                      text-anchor="middle"
+                      fill="#e2e8f0"
+                      font-family="monospace"
+                      font-size="9"
+                      font-weight="700">
+                  NETWORK ACL
+                </text>
+
+
+                <!-- ROUTE -->
+
+                <path d="M147 204 H225"
+                      fill="none"
+                      stroke="#60a5fa"
+                      stroke-width="3"/>
+
+                <polygon points="220,199 230,204 220,209"
+                         fill="#60a5fa"/>
+
+                <path d="M375 228 H445"
+                      fill="none"
+                      stroke="url(#vpcline)"
+                      stroke-width="3"/>
+
+                <polygon points="440,223 450,228 440,233"
+                         fill="#a78bfa"/>
+
+                <path d="M300 282 V254"
+                      fill="none"
+                      stroke="#475569"
+                      stroke-width="2"
+                      stroke-dasharray="5 5"/>
+
+                <path d="M522 282 V254"
+                      fill="none"
+                      stroke="#475569"
+                      stroke-width="2"
+                      stroke-dasharray="5 5"/>
+
+              </svg>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
     </section>
+
+
+    <!-- SYSTEMS MANAGER -->
 
     <section class="card project-group">
-      <h2 class="project-group-title">Cloud Security & Incident Response</h2>
 
-      <div class="project-stack">
-        <article class="project-card">
-          <div class="project-top">
-            <div class="project-copy">
-              <h3>SIEM Monitoring & Incident Response Analysis</h3>
-              <div class="project-subtitle">
-                Designed and implemented a SIEM monitoring workflow to collect security logs, analyze events, and improve threat visibility across monitored environments.
-              </div>
+      <h2 class="project-group-title">
+        Cloud Operations & Automation
+      </h2>
 
-              <div class="project-meta">
-                SIEM Monitoring • Log Analysis • Security Operations • Incident Investigation
-              </div>
 
-              <div class="project-pills">
-                <span>SIEM Monitoring</span>
-                <span>Log Analysis</span>
-                <span>Security Operations</span>
-                <span>Incident Investigation</span>
-              </div>
+      <article class="project-card">
 
-              <p class="project-desc">
-                Developed a SIEM-based monitoring environment to analyze security logs, identify anomalies, and apply incident response workflows for improved threat visibility.
-              </p>
+        <div class="project-top">
 
-              <ul class="project-list">
-                <li>Collected and analyzed system and security logs to identify suspicious activity patterns and potential security events.</li>
-                <li>Investigated alerts and event data to improve threat visibility and strengthen incident analysis processes.</li>
-                <li>Correlated log sources to support faster event investigation and more effective security response workflows.</li>
-                <li>Documented findings, analysis steps, and response procedures to establish repeatable security operations practices.</li>
-              </ul>
+          <div class="project-copy">
 
-              <div class="project-footer-row">
-                <a class="btn primary" href="https://quentingrant.github.io/Updated-Technical-Portfolio/" target="_blank" rel="noreferrer">View Project</a>
-                <a class="btn" href="https://github.com/QuentinGrant/Updated-Technical-Portfolio" target="_blank" rel="noreferrer">GitHub</a>
-              </div>
+            <h3>
+              AWS Systems Manager Operations & Automation
+            </h3>
 
-              <div class="project-note">
-                Demonstrates security monitoring, log analysis, and incident investigation capabilities through a simulated security operations environment.
-              </div>
+            <p class="project-subtitle">
+              Centralized EC2 management and operational automation
+              using AWS Systems Manager.
+            </p>
+
+            <div class="project-meta">
+              AWS Systems Manager • EC2 • Run Command • Patch Manager
             </div>
 
-            <div class="project-visual">
-              <img src="images/siem.png" alt="SIEM monitoring and incident analysis lab diagram" class="project-img">
+            <div class="project-pills">
+
+              <span>Systems Manager</span>
+              <span>EC2 Management</span>
+              <span>Run Command</span>
+              <span>Patch Automation</span>
+
             </div>
+
+            <p class="project-desc">
+              Used AWS Systems Manager to centralize instance
+              administration, automate maintenance activities,
+              and improve operational visibility.
+            </p>
+
+            <ul class="project-list">
+
+              <li>
+                Configured Systems Manager capabilities for EC2 administration.
+              </li>
+
+              <li>
+                Used Run Command for remote administrative operations.
+              </li>
+
+              <li>
+                Applied Patch Manager capabilities for maintenance workflows.
+              </li>
+
+              <li>
+                Used inventory and management features to improve
+                operational visibility.
+              </li>
+
+            </ul>
+
+            <div class="project-footer-row">
+
+              <a
+                class="btn primary"
+                href="https://quentingrant.github.io/Updated-Technical-Portfolio/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Project
+              </a>
+
+            </div>
+
           </div>
-        </article>
-      </div>
+
+
+          <!-- SYSTEMS MANAGER ARCHITECTURE -->
+
+          <div class="project-visual">
+
+            <div
+              class="architecture-visual"
+              role="img"
+              aria-label="AWS Systems Manager operations architecture showing administrators managing EC2 instances through Run Command and Patch Manager"
+            >
+
+              <svg
+                viewBox="0 0 700 430"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+
+                <defs>
+
+                  <linearGradient id="ssmbg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0b1220"/>
+                    <stop offset="55%" stop-color="#111827"/>
+                    <stop offset="100%" stop-color="#16112b"/>
+                  </linearGradient>
+
+                  <linearGradient id="ssmline" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#22c55e"/>
+                    <stop offset="50%" stop-color="#3b82f6"/>
+                    <stop offset="100%" stop-color="#a78bfa"/>
+                  </linearGradient>
+
+                </defs>
+
+                <rect width="700" height="430" rx="18" fill="url(#ssmbg)"/>
+
+                <rect x="28" y="25" width="644" height="2"
+                      rx="1" fill="url(#ssmline)"/>
+
+                <text x="42" y="62"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="20"
+                      font-weight="700">
+                  Systems Manager Operations
+                </text>
+
+                <text x="42" y="84"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="11">
+                  Centralized EC2 Management • Automation • Maintenance
+                </text>
+
+
+                <!-- ADMIN -->
+
+                <rect x="42" y="160" width="130" height="82"
+                      rx="15"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <circle cx="78" cy="195" r="15"
+                        fill="none"
+                        stroke="#60a5fa"
+                        stroke-width="2"/>
+
+                <path d="M68 217 Q78 204 88 217"
+                      fill="none"
+                      stroke="#60a5fa"
+                      stroke-width="2"/>
+
+                <text x="112" y="193"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="12"
+                      font-weight="700">
+                  ADMIN
+                </text>
+
+                <text x="112" y="213"
+                      text-anchor="middle"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="9">
+                  Operator
+                </text>
+
+
+                <!-- SYSTEMS MANAGER -->
+
+                <rect x="215" y="130" width="190" height="145"
+                      rx="18"
+                      fill="#0f2018"
+                      stroke="#22c55e"
+                      stroke-width="2"/>
+
+                <text x="310" y="163"
+                      text-anchor="middle"
+                      fill="#86efac"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  AWS SYSTEMS MANAGER
+                </text>
+
+                <text x="310" y="191"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="16"
+                      font-weight="700">
+                  Operations Hub
+                </text>
+
+
+                <!-- RUN COMMAND -->
+
+                <rect x="238" y="210" width="145" height="34"
+                      rx="9"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="310" y="232"
+                      text-anchor="middle"
+                      fill="#93c5fd"
+                      font-family="monospace"
+                      font-size="9"
+                      font-weight="700">
+                  RUN COMMAND
+                </text>
+
+
+                <!-- PATCH -->
+
+                <rect x="238" y="250" width="145" height="34"
+                      rx="9"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="310" y="272"
+                      text-anchor="middle"
+                      fill="#c4b5fd"
+                      font-family="monospace"
+                      font-size="9"
+                      font-weight="700">
+                  PATCH MANAGER
+                </text>
+
+
+                <!-- EC2 1 -->
+
+                <rect x="455" y="130" width="175" height="72"
+                      rx="14"
+                      fill="#172033"
+                      stroke="#3b82f6"
+                      stroke-width="2"/>
+
+                <text x="542" y="158"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="14"
+                      font-weight="700">
+                  EC2 INSTANCE
+                </text>
+
+                <text x="542" y="179"
+                      text-anchor="middle"
+                      fill="#93c5fd"
+                      font-family="monospace"
+                      font-size="9">
+                  Application Server
+                </text>
+
+
+                <!-- EC2 2 -->
+
+                <rect x="455" y="220" width="175" height="72"
+                      rx="14"
+                      fill="#172033"
+                      stroke="#3b82f6"
+                      stroke-width="2"/>
+
+                <text x="542" y="248"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="14"
+                      font-weight="700">
+                  EC2 INSTANCE
+                </text>
+
+                <text x="542" y="269"
+                      text-anchor="middle"
+                      fill="#93c5fd"
+                      font-family="monospace"
+                      font-size="9">
+                  Managed Workload
+                </text>
+
+
+                <!-- INVENTORY -->
+
+                <rect x="235" y="330" width="150" height="52"
+                      rx="12"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="310" y="352"
+                      text-anchor="middle"
+                      fill="#e2e8f0"
+                      font-family="Arial,sans-serif"
+                      font-size="12"
+                      font-weight="700">
+                  INVENTORY
+                </text>
+
+                <text x="310" y="369"
+                      text-anchor="middle"
+                      fill="#64748b"
+                      font-family="monospace"
+                      font-size="8">
+                  Operational Visibility
+                </text>
+
+
+                <!-- CONNECTIONS -->
+
+                <path d="M172 201 H215"
+                      fill="none"
+                      stroke="#60a5fa"
+                      stroke-width="3"/>
+
+                <polygon points="210,196 220,201 210,206"
+                         fill="#60a5fa"/>
+
+                <path d="M405 165 H455"
+                      fill="none"
+                      stroke="url(#ssmline)"
+                      stroke-width="3"/>
+
+                <polygon points="450,160 460,165 450,170"
+                         fill="#3b82f6"/>
+
+                <path d="M405 255 H455"
+                      fill="none"
+                      stroke="url(#ssmline)"
+                      stroke-width="3"/>
+
+                <polygon points="450,250 460,255 450,260"
+                         fill="#3b82f6"/>
+
+                <path d="M310 330 V284"
+                      fill="none"
+                      stroke="#475569"
+                      stroke-width="2"
+                      stroke-dasharray="5 5"/>
+
+              </svg>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
     </section>
+
+
+    <!-- SIEM -->
+
+    <section class="card project-group">
+
+      <h2 class="project-group-title">
+        Security & Incident Response
+      </h2>
+
+
+      <article class="project-card">
+
+        <div class="project-top">
+
+          <div class="project-copy">
+
+            <h3>
+              SIEM Monitoring & Incident Response Analysis
+            </h3>
+
+            <p class="project-subtitle">
+              Security monitoring workflow focused on log analysis,
+              event investigation, and incident response.
+            </p>
+
+            <div class="project-meta">
+              SIEM • Log Analysis • Security Operations • Incident Investigation
+            </div>
+
+            <div class="project-pills">
+
+              <span>SIEM</span>
+              <span>Log Analysis</span>
+              <span>Security Operations</span>
+              <span>Incident Response</span>
+
+            </div>
+
+            <p class="project-desc">
+              Developed a simulated security operations environment
+              for analyzing security events, investigating alerts,
+              and documenting repeatable incident-response workflows.
+            </p>
+
+            <ul class="project-list">
+
+              <li>
+                Collected and analyzed system and security logs.
+              </li>
+
+              <li>
+                Investigated alerts and suspicious event patterns.
+              </li>
+
+              <li>
+                Correlated available log sources during investigations.
+              </li>
+
+              <li>
+                Documented analysis and response procedures.
+              </li>
+
+            </ul>
+
+            <div class="project-footer-row">
+
+              <a
+                class="btn primary"
+                href="https://quentingrant.github.io/Updated-Technical-Portfolio/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Project
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- SIEM ARCHITECTURE -->
+
+          <div class="project-visual">
+
+            <div
+              class="architecture-visual"
+              role="img"
+              aria-label="SIEM security monitoring architecture showing log sources, event collection, analysis, alerts, and incident response"
+            >
+
+              <svg
+                viewBox="0 0 700 430"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+
+                <defs>
+
+                  <linearGradient id="siembg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0b1220"/>
+                    <stop offset="55%" stop-color="#111827"/>
+                    <stop offset="100%" stop-color="#16112b"/>
+                  </linearGradient>
+
+                  <linearGradient id="siemline" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#22c55e"/>
+                    <stop offset="50%" stop-color="#3b82f6"/>
+                    <stop offset="100%" stop-color="#a78bfa"/>
+                  </linearGradient>
+
+                </defs>
+
+                <rect width="700" height="430" rx="18" fill="url(#siembg)"/>
+
+                <rect x="28" y="25" width="644" height="2"
+                      rx="1" fill="url(#siemline)"/>
+
+                <text x="42" y="62"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="20"
+                      font-weight="700">
+                  SIEM Monitoring & Response
+                </text>
+
+                <text x="42" y="84"
+                      fill="#94a3b8"
+                      font-family="monospace"
+                      font-size="11">
+                  Logs • Detection • Investigation • Response
+                </text>
+
+
+                <!-- LOG SOURCES -->
+
+                <rect x="42" y="135" width="150" height="190"
+                      rx="17"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="117" y="162"
+                      text-anchor="middle"
+                      fill="#cbd5e1"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  LOG SOURCES
+                </text>
+
+
+                <rect x="62" y="180" width="110" height="32"
+                      rx="8"
+                      fill="#0f172a"
+                      stroke="#475569"/>
+
+                <text x="117" y="201"
+                      text-anchor="middle"
+                      fill="#e2e8f0"
+                      font-family="monospace"
+                      font-size="8">
+                  SYSTEM LOGS
+                </text>
+
+
+                <rect x="62" y="222" width="110" height="32"
+                      rx="8"
+                      fill="#0f172a"
+                      stroke="#475569"/>
+
+                <text x="117" y="243"
+                      text-anchor="middle"
+                      fill="#e2e8f0"
+                      font-family="monospace"
+                      font-size="8">
+                  SECURITY EVENTS
+                </text>
+
+
+                <rect x="62" y="264" width="110" height="32"
+                      rx="8"
+                      fill="#0f172a"
+                      stroke="#475569"/>
+
+                <text x="117" y="285"
+                      text-anchor="middle"
+                      fill="#e2e8f0"
+                      font-family="monospace"
+                      font-size="8">
+                  ALERT DATA
+                </text>
+
+
+                <!-- SIEM -->
+
+                <rect x="235" y="125" width="205" height="210"
+                      rx="19"
+                      fill="#0f2018"
+                      stroke="#22c55e"
+                      stroke-width="2"/>
+
+                <text x="337" y="157"
+                      text-anchor="middle"
+                      fill="#86efac"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  SIEM PLATFORM
+                </text>
+
+                <text x="337" y="187"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="17"
+                      font-weight="700">
+                  Security Analysis
+                </text>
+
+
+                <rect x="265" y="208" width="145" height="32"
+                      rx="8"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="337" y="229"
+                      text-anchor="middle"
+                      fill="#93c5fd"
+                      font-family="monospace"
+                      font-size="9"
+                      font-weight="700">
+                  EVENT CORRELATION
+                </text>
+
+
+                <rect x="265" y="250" width="145" height="32"
+                      rx="8"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="337" y="271"
+                      text-anchor="middle"
+                      fill="#c4b5fd"
+                      font-family="monospace"
+                      font-size="9"
+                      font-weight="700">
+                  ALERT ANALYSIS
+                </text>
+
+
+                <rect x="265" y="292" width="145" height="32"
+                      rx="8"
+                      fill="#172033"
+                      stroke="#334155"/>
+
+                <text x="337" y="313"
+                      text-anchor="middle"
+                      fill="#86efac"
+                      font-family="monospace"
+                      font-size="9"
+                      font-weight="700">
+                  INVESTIGATION
+                </text>
+
+
+                <!-- ALERT -->
+
+                <rect x="490" y="145" width="165" height="72"
+                      rx="14"
+                      fill="#19142a"
+                      stroke="#a78bfa"
+                      stroke-width="2"/>
+
+                <text x="572" y="174"
+                      text-anchor="middle"
+                      fill="#c4b5fd"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  ALERT
+                </text>
+
+                <text x="572" y="196"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="13"
+                      font-weight="700">
+                  Security Event
+                </text>
+
+
+                <!-- RESPONSE -->
+
+                <rect x="490" y="250" width="165" height="72"
+                      rx="14"
+                      fill="#172033"
+                      stroke="#3b82f6"
+                      stroke-width="2"/>
+
+                <text x="572" y="279"
+                      text-anchor="middle"
+                      fill="#93c5fd"
+                      font-family="monospace"
+                      font-size="11"
+                      font-weight="700">
+                  RESPONSE
+                </text>
+
+                <text x="572" y="301"
+                      text-anchor="middle"
+                      fill="white"
+                      font-family="Arial,sans-serif"
+                      font-size="13"
+                      font-weight="700">
+                  Document & Respond
+                </text>
+
+
+                <!-- CONNECTIONS -->
+
+                <path d="M192 230 H235"
+                      fill="none"
+                      stroke="#60a5fa"
+                      stroke-width="3"/>
+
+                <polygon points="230,225 240,230 230,235"
+                         fill="#60a5fa"/>
+
+                <path d="M440 181 H490"
+                      fill="none"
+                      stroke="url(#siemline)"
+                      stroke-width="3"/>
+
+                <polygon points="485,176 495,181 485,186"
+                         fill="#a78bfa"/>
+
+                <path d="M440 285 H490"
+                      fill="none"
+                      stroke="url(#siemline)"
+                      stroke-width="3"/>
+
+                <polygon points="485,280 495,285 485,290"
+                         fill="#3b82f6"/>
+
+
+                <!-- RESPONSE LOOP -->
+
+                <path d="M572 217 V250"
+                      fill="none"
+                      stroke="#475569"
+                      stroke-width="2"
+                      stroke-dasharray="5 5"/>
+
+                <path d="M572 322 C572 365 337 385 337 335"
+                      fill="none"
+                      stroke="#475569"
+                      stroke-width="2"
+                      stroke-dasharray="5 5"/>
+
+                <polygon points="332,340 337,330 342,340"
+                         fill="#475569"/>
+
+              </svg>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- FOOTER -->
 
     <div class="footer">
-      <div>© <span id="year"></span> Quentin Grant</div>
+
+      <div>
+        © <span id="year"></span> Quentin Grant
+      </div>
+
     </div>
+
   </main>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>
