@@ -3,93 +3,553 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Education and training of Quentin Grant" />
+
+  <meta
+    name="description"
+    content="Education and professional development of Quentin Grant — M.S. in Information Systems, AWS training, and cloud engineering development."
+  />
+
+  <meta property="og:title" content="Quentin Grant | Education" />
+  <meta
+    property="og:description"
+    content="Cloud Engineering • AWS Infrastructure • Automation & Operations"
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.jpg.jpg" />
+
   <title>Quentin Grant | Education</title>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .education-shell{
+      display:grid;
+      gap:18px;
+    }
+
+    .education-hero{
+      position:relative;
+      overflow:hidden;
+      padding:28px;
+    }
+
+    .education-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(520px 240px at 8% 10%, rgba(34,197,94,.10), transparent 60%),
+        radial-gradient(540px 260px at 86% 18%, rgba(59,130,246,.12), transparent 62%),
+        radial-gradient(480px 240px at 60% 100%, rgba(167,139,250,.10), transparent 60%);
+      pointer-events:none;
+    }
+
+    .education-hero-inner{
+      position:relative;
+      z-index:1;
+    }
+
+    .education-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:12px;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .education-kicker::after{
+      content:"";
+      width:56px;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3));
+    }
+
+    .education-title{
+      margin:0 0 12px;
+      max-width:17ch;
+      font-size:clamp(30px,4vw,44px);
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+
+    .education-lead{
+      margin:0;
+      max-width:70ch;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    .education-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .education-chip{
+      padding:9px 13px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+      font-family:var(--mono);
+      font-size:12px;
+    }
+
+    .education-section{
+      padding:22px;
+    }
+
+    .education-section-title{
+      margin:0 0 16px;
+      font-size:14px;
+      font-family:var(--mono);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .education-section-title::after{
+      content:"";
+      width:48px;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--a2),var(--a3));
+    }
+
+    .education-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+    }
+
+    .education-card{
+      padding:20px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.035);
+    }
+
+    .education-card.featured{
+      background:
+        linear-gradient(
+          135deg,
+          rgba(34,197,94,.07),
+          rgba(59,130,246,.06),
+          rgba(167,139,250,.05)
+        );
+    }
+
+    .education-card h3{
+      margin:0 0 8px;
+      font-size:21px;
+      line-height:1.25;
+    }
+
+    .education-card h4{
+      margin:20px 0 5px;
+      font-size:17px;
+      line-height:1.35;
+    }
+
+    .education-card h4:first-of-type{
+      margin-top:18px;
+    }
+
+    .education-where{
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      line-height:1.5;
+    }
+
+    .education-text{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .education-card ul{
+      margin:14px 0 0;
+      padding-left:18px;
+    }
+
+    .education-card li{
+      margin:8px 0;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .education-highlight{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .education-highlight-card{
+      padding:20px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.035);
+    }
+
+    .education-highlight-number{
+      margin-bottom:9px;
+      font-size:27px;
+      font-weight:800;
+      line-height:1.1;
+    }
+
+    .education-highlight-label{
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      line-height:1.5;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+
+    .education-cta{
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(34,197,94,.07),
+          rgba(59,130,246,.07),
+          rgba(167,139,250,.07)
+        );
+    }
+
+    .education-cta p{
+      margin:0;
+      color:var(--text);
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    @media (max-width:980px){
+      .education-grid,
+      .education-highlight{
+        grid-template-columns:1fr;
+      }
+
+      .education-title{
+        max-width:none;
+      }
+    }
+  </style>
 </head>
+
 <body data-theme="aurora" data-page="education">
+
   <a class="skip" href="#content">Skip to content</a>
 
   <header>
     <div class="topbar">
+
       <div class="brand">
-        <div class="logo" aria-hidden="true">QG</div>
+
+        <div class="logo" aria-hidden="true">
+          QG
+        </div>
+
         <div>
           <h1>Quentin Grant</h1>
-          <p>AWS Cloud Infrastructure • IT Operations • Cloud Security</p>
+          <p>
+            Cloud Engineering • AWS Infrastructure • Automation & Operations
+          </p>
         </div>
+
       </div>
 
+
       <nav aria-label="Primary">
+
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
         <a href="experience.html">Experience</a>
-        <a href="education.html">Education</a>
+        <a href="education.html" class="active">Education</a>
         <a href="contact.html">Contact</a>
+
       </nav>
 
+
       <div class="actions">
-        <button class="btn" id="themeBtn" type="button">Theme: Aurora</button>
-        <button class="btn" id="modeBtn" type="button">Mode: Dark</button>
+
+        <button class="btn" id="themeBtn" type="button">
+          Theme: Aurora
+        </button>
+
+        <button class="btn" id="modeBtn" type="button">
+          Mode: Dark
+        </button>
+
+        <a class="btn" href="mailto:Quentingrant82@gmail.com">
+          Email
+        </a>
+
+        <a
+          class="btn primary"
+          href="https://www.linkedin.com/in/quentingrant/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+
       </div>
+
     </div>
   </header>
 
-  <main id="content">
-    <section class="card pageHero">
-      <p class="kicker"><span class="dot"></span>Education</p>
-      <h2 class="pageTitle">Cloud Engineering Foundation & Professional Development</h2>
-      <p class="sub">
-        My background combines advanced IT education, enterprise infrastructure experience, and hands-on AWS training focused on cloud operations, automation, security, and system reliability.
-      </p>
-    </section>
 
-    <section class="card section">
-      <h2>Education</h2>
+  <main id="content" class="education-shell">
 
-      <div class="twoCol">
-        <div class="item">
-          <h3>Education & Professional Development</h3>
-          <p class="smallText">
-            My academic background in information systems, combined with hands-on technical experience and cloud training, provides a strong foundation for designing, supporting, and improving modern technology environments.
-          </p>
 
-          <div class="topGap">
-            <h3>South University — Master of Information Systems (MIS)</h3>
-            <div class="where">Savannah, GA (Remote) • January 2021 - March 2022</div>
-          </div>
+    <!-- EDUCATION HERO -->
 
-          <div class="topGap">
-            <h3>South University — Bachelor of Information Technology (BIT)</h3>
-            <div class="where">Columbia, SC (Campus) • September 2017 - December 2021</div>
-          </div>
+    <section class="card education-hero">
+
+      <div class="education-hero-inner">
+
+        <div class="education-kicker">
+          Education & Professional Development
         </div>
 
-        <div class="item">
-          <h3>Current Cloud Training & Development</h3>
-          <p class="smallText">
-            Continuing to expand cloud engineering expertise through hands-on AWS training, infrastructure projects, automation, and operational best practices.
-          </p>
+        <h2 class="education-title">
+          Education that supports the engineering work.
+        </h2>
 
-          <div class="topGap">
-            <h3>Per Scholas — AWS re/Start Training</h3>
-            <div class="where">Remote • January 2026 - March 2026</div>
-            <ul>
-             <li>Completed a 15-week AWS-focused cloud program emphasizing cloud computing, networking, databases, monitoring, security, and cloud operations.</li>
-             <li>Applied hands-on skills in automation, infrastructure deployment practices, serverless services, containers, governance, and shell scripting.</li>
-             <li>Strengthened professional communication, collaboration, technical documentation, and career development skills for cloud engineering environments.</li>
-            </ul>
-          </div>
+        <p class="education-lead">
+          My background combines graduate-level information systems
+          education, technical experience, AWS training, and hands-on
+          cloud engineering development.
+        </p>
+
+        <div class="education-chips">
+
+          <span class="education-chip">
+            M.S. Information Systems
+          </span>
+
+          <span class="education-chip">
+            B.S. Information Technology
+          </span>
+
+          <span class="education-chip">
+            AWS re/Start
+          </span>
+
+          <span class="education-chip">
+            AWS Cloud Engineering
+          </span>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- ACADEMIC FOUNDATION -->
+
+    <section class="card education-section">
+
+      <h2 class="education-section-title">
+        Academic Foundation
+      </h2>
+
+
+      <div class="education-grid">
+
+
+        <article class="education-card featured">
+
+          <h3>
+            South University
+          </h3>
+
+          <h4>
+            Master of Information Systems
+          </h4>
+
+          <div class="education-where">
+            Savannah, GA (Remote) • January 2021 – March 2022
+          </div>
+
+          <p class="education-text" style="margin-top:14px;">
+            Graduate-level information systems education providing
+            the academic foundation for understanding technology,
+            information systems, organizational environments,
+            and modern IT operations.
+          </p>
+
+        </article>
+
+
+        <article class="education-card">
+
+          <h3>
+            South University
+          </h3>
+
+          <h4>
+            Bachelor of Information Technology
+          </h4>
+
+          <div class="education-where">
+            Columbia, SC (Campus) • September 2017 – December 2021
+          </div>
+
+          <p class="education-text" style="margin-top:14px;">
+            Undergraduate IT education establishing a broad technical
+            foundation across information technology and enterprise
+            computing environments.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- CLOUD DEVELOPMENT -->
+
+    <section class="card education-section">
+
+      <h2 class="education-section-title">
+        Cloud Development
+      </h2>
+
+
+      <article class="education-card featured">
+
+        <h3>
+          Per Scholas — AWS re/Start Training
+        </h3>
+
+        <div class="education-where">
+          Remote • January 2026 – March 2026
+        </div>
+
+        <p class="education-text" style="margin-top:14px;">
+          Completed an AWS-focused cloud training program that
+          strengthened my foundation in cloud computing, networking,
+          security, databases, monitoring, and cloud operations.
+        </p>
+
+        <ul>
+
+          <li>
+            Applied hands-on AWS concepts across cloud infrastructure,
+            networking, databases, monitoring, security, and operations.
+          </li>
+
+          <li>
+            Developed practical experience with automation,
+            infrastructure deployment practices, shell scripting,
+            containers, and cloud services.
+          </li>
+
+          <li>
+            Strengthened technical communication, documentation,
+            collaboration, and professional skills for cloud
+            engineering environments.
+          </li>
+
+        </ul>
+
+      </article>
+
+    </section>
+
+
+    <!-- CURRENT CAPABILITY -->
+
+    <section class="education-highlight">
+
+      <div class="education-highlight-card card">
+
+        <div class="education-highlight-number">
+          M.S.
+        </div>
+
+        <div class="education-highlight-label">
+          Information Systems
+        </div>
+
+      </div>
+
+
+      <div class="education-highlight-card card">
+
+        <div class="education-highlight-number">
+          AWS
+        </div>
+
+        <div class="education-highlight-label">
+          Cloud Engineering Development
+        </div>
+
+      </div>
+
+
+      <div class="education-highlight-card card">
+
+        <div class="education-highlight-number">
+          55/55
+        </div>
+
+        <div class="education-highlight-label">
+          Cloud Engineering Capstone Completed
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CLOSING -->
+
+    <section class="education-cta card">
+
+      <p>
+        My education provides the academic foundation. My professional
+        experience provides the infrastructure foundation. Hands-on AWS
+        engineering brings those two together in the work I build today.
+      </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
 
     <div class="footer">
-      <div>© <span id="year"></span> Quentin Grant</div>
+
+      <div>
+        © <span id="year"></span> Quentin Grant
+      </div>
+
     </div>
+
   </main>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>
